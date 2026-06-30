@@ -9,6 +9,22 @@ export type ModelSettings = {
   timeout_seconds: number;
 };
 
+export type ModelConnectionTestResult = {
+  ok: boolean;
+  provider: ModelProvider;
+  base_url: string;
+  model: string;
+  models?: string[];
+  model_available: boolean;
+  text_json_ok?: boolean;
+  text_json_issue?: {
+    code: string;
+    severity: string;
+    message: string;
+    reason?: string;
+  };
+};
+
 export type SyllabusIngestionResult = {
   ok: boolean;
   subject: string;
@@ -199,7 +215,7 @@ export async function getModels(settings: ModelSettings): Promise<string[]> {
   return payload.models ?? [];
 }
 
-export async function testModelConnection(settings: ModelSettings) {
+export async function testModelConnection(settings: ModelSettings): Promise<ModelConnectionTestResult> {
   const response = await fetch(`${API_BASE}/api/model-settings/test`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

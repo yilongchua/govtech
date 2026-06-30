@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 
 from backend.app.core.config import get_model_settings, save_model_settings
 from backend.app.src.ingestion.model_client import LLMClient
+from backend.app.src.ingestion.model_preflight import check_text_json_capability
 
 router = APIRouter(prefix="/api/model-settings", tags=["model-settings"])
 
@@ -68,6 +69,13 @@ def list_models(payload: ModelSettingsPayload) -> dict:
 @router.post("/test")
 def test_connection(payload: ModelSettingsPayload) -> dict:
     try:
-        return _client_from_payload(payload).test_connection()
+        client = _client_from_payload(payload)
+        result = client.test_connection()
+        issue, artifact = check_text_json_capability(client)
+        result["text_json_preflight"] = artifact
+        result["text_json_ok"] = issue is None
+        if issue is not None:
+            result["text_json_issue"] = issue.model_dump(mode="json")
+        return result
     except Exception as exc:
         raise _connection_error(exc) from exc

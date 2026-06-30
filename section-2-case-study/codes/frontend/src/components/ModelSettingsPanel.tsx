@@ -68,7 +68,11 @@ export function ModelSettingsPanel({ open, onClose }: Props) {
       const nextModels = result.models ?? [];
       setModels(nextModels);
       if (!settings.model && nextModels[0]) update({ model: nextModels[0] });
-      setStatus(result.model_available ? "Connection ready" : "Connection works, choose an available model");
+      if (!result.text_json_ok) {
+        setStatus(result.text_json_issue?.reason || result.text_json_issue?.message || "Connection works, but text JSON preflight failed");
+      } else {
+        setStatus(result.model_available ? "Connection ready" : "Connection works, choose an available model");
+      }
     } catch (error) {
       setStatus(error instanceof Error ? error.message : String(error));
     } finally {

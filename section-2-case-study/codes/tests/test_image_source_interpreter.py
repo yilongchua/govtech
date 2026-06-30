@@ -40,6 +40,17 @@ class _VisionClient(LocalModelClient):
         }
 
 
+class _SchemaEchoVisionClient(LocalModelClient):
+    def complete_image_json(self, image_path: Path, prompt: str) -> dict[str, Any]:
+        self.last_prompt = prompt
+        self.last_raw_response = {"content": "schema echo"}
+        return {
+            "properties": {"text": {"type": "string"}},
+            "required": ["text"],
+            "type": "object",
+        }
+
+
 def test_interprets_image_only_source_with_vision_model(tmp_path) -> None:
     exam = _exam_with_image_source()
     client = _VisionClient(provider="mock", base_url="http://localhost:1234/v1", model="vision")
@@ -72,3 +83,32 @@ def test_warns_when_image_only_source_cannot_be_interpreted(tmp_path) -> None:
     assert exam.issues[0].code == "IMAGE_SOURCE_NO_TEXT"
     assert exam.issues[0].severity == "WARNING"
     assert exam.issues[0].message == "Source E is an image/cartoon without transcribed text. Vision interpretation may be required."
+
+
+def test_warning_does_not_duplicate_source_prefix(tmp_path) -> None:
+    exam = _exam_with_image_source()
+    exam.sources[0].source_id = "Source E"
+    client = LocalModelClient(provider="mock", base_url="http://localhost:1234/v1", model="mock")
+
+    interpret_image_only_sources(
+        exam,
+        Path("data/raw/exam_pdfs/2174_specimen_paper_1.pdf"),
+        tmp_path,
+        client,
+    )
+
+    assert exam.issues[0].message == "Source E is an image/cartoon without transcribed text. Vision interpretation may be required."
+
+
+def test_schema_echo_response_gets_readable_warning_reason(tmp_path) -> None:
+    exam = _exam_with_image_source()
+    client = _SchemaEchoVisionClient(provider="mock", base_url="http://localhost:1234/v1", model="vision")
+
+    interpret_image_only_sources(
+        exam,
+        Path("data/raw/exam_pdfs/2174_specimen_paper_1.pdf"),
+        tmp_path,
+        client,
+    )
+
+    assert exam.issues[0].reason == "Vision model returned the output schema instead of an image-source interpretation."

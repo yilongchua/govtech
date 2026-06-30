@@ -9,6 +9,7 @@ from backend.app.core.storage import job_dir, write_json
 from backend.app.src.comparison.topic_weightage import calculate_topic_weightage
 from backend.app.src.ingestion.first_page_classifier import classify_first_page
 from backend.app.src.ingestion.model_client import LLMClient
+from backend.app.src.ingestion.model_preflight import check_text_json_capability
 from backend.app.src.ingestion.page_renderer import render_first_page
 from backend.app.src.ingestion.pdf_guard import validate_pdf_file
 from backend.app.src.ingestion.pdf_to_markdown import convert_pdf_to_markdown
@@ -37,10 +38,21 @@ def run_analysis(
         model=model or configured_model.model,
         timeout=configured_model.timeout_seconds,
     )
+    text_preflight_issue, text_preflight_artifact = check_text_json_capability(client)
+    if text_preflight_issue is not None:
+        issues.append(text_preflight_issue)
+    audit_events.append(
+        {
+            "stage": "model_text_json_preflight",
+            "ok": text_preflight_artifact["ok"],
+            "reason": text_preflight_artifact.get("reason"),
+        }
+    )
     first_page = classify_first_page(image_path, client)
     write_json(
         job_dir("json", job_id) / "raw_model_response.json",
         {
+            "model_text_json_preflight": text_preflight_artifact,
             "first_page_check": first_page.model_dump(mode="json"),
             "raw_response": client.last_raw_response,
             "prompt": client.last_prompt,
