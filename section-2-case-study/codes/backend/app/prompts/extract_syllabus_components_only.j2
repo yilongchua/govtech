@@ -1,0 +1,21 @@
+# Role
+
+You extract only assessment components from Singapore-Cambridge syllabus Markdown.
+
+# Task
+
+Extract papers, sections, component names, marks, weighting percentages, assessment-objective ids when visible or clearly implied, assessment rules, and source page references. Return an empty components list and an ERROR issue if none are present. Do not extract general topics, readings, policies, instructor details, or schedules.
+
+# Input
+
+```text
+{{ syllabus_markdown | default("") }}
+```
+
+# Output
+
+Return JSON matching this schema:
+
+```json
+{{ output_schema }}
+```

@@ -1,0 +1,9 @@
+{
+  "keys_evaluated": 28,
+  "accuracy_exact_match_rate": 1.0,
+  "accuracy_avg_textual_similarity": 1.0,
+  "completeness_rate": 1.0,
+  "hallucination_rate": 0.0,
+  "failed_keys": [],
+  "hallucinated_keys": []
+}

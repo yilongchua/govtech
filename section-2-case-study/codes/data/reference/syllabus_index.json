@@ -1,0 +1,34 @@
+{
+  "latest": {
+    "subject": "Bahasa Indonesia as a Third Language",
+    "subject_code": "1136",
+    "year": 2026,
+    "source_page_url": "https://www.seab.gov.sg/gce-o-level/o-level-syllabuses-examined-for-school-candidates-2026/",
+    "pdf_url": "https://isomer-user-content.by.gov.sg/334/f256e15b-92d5-4d23-b76c-626036cb51ae/1136_y26_sy.pdf",
+    "pdf_sha256": "7cd5b20d8a227b706e73255ea82b69195a83d2a20bdf954fea9fc22686d3106f",
+    "markdown_path": "data/processed/markdown/syllabus/1136_y26_sy.md",
+    "json_path": "data/processed/json/syllabus/1136_y26_sy.json"
+  },
+  "syllabuses": [
+    {
+      "subject": "History",
+      "subject_code": "2174",
+      "year": 2026,
+      "source_page_url": "https://www.seab.gov.sg/gce-o-level/o-level-syllabuses-examined-for-school-candidates-2026/",
+      "pdf_url": "https://isomer-user-content.by.gov.sg/334/3622b032-4be0-497a-9192-399cb6c98b65/2174_y26_sy.pdf",
+      "pdf_sha256": "59a2b82478e32803b85c9873c84c99b99ad62f138a67fa3c08dd4ecfc685eaf4",
+      "markdown_path": "2174_y26_sy.md",
+      "json_path": "data/processed/json/syllabus/2174_y26_sy.json"
+    },
+    {
+      "subject": "Bahasa Indonesia as a Third Language",
+      "subject_code": "1136",
+      "year": 2026,
+      "source_page_url": "https://www.seab.gov.sg/gce-o-level/o-level-syllabuses-examined-for-school-candidates-2026/",
+      "pdf_url": "https://isomer-user-content.by.gov.sg/334/f256e15b-92d5-4d23-b76c-626036cb51ae/1136_y26_sy.pdf",
+      "pdf_sha256": "7cd5b20d8a227b706e73255ea82b69195a83d2a20bdf954fea9fc22686d3106f",
+      "markdown_path": "data/processed/markdown/syllabus/1136_y26_sy.md",
+      "json_path": "data/processed/json/syllabus/1136_y26_sy.json"
+    }
+  ]
+}

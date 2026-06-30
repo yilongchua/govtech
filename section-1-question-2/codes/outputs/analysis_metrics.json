@@ -1,0 +1,103 @@
+{
+  "data_range_start": "2010-01",
+  "data_range_end": "2026-06",
+  "price_rows": 1950,
+  "ab_rows": 780,
+  "train_rows": 658,
+  "test_rows": 120,
+  "r2": 0.969,
+  "holdout_mae": 3955,
+  "holdout_mape": 0.0382,
+  "quota_elasticity": -0.0151,
+  "quota_elasticity_se": 0.0064,
+  "bid_pressure_coef": 0.1399,
+  "lag_price_coef": 0.9445,
+  "latest": [
+    {
+      "vehicle_class": "Category A",
+      "month": "2026-06",
+      "bidding_no": 2,
+      "quota": 1251,
+      "bids_received": 1768,
+      "premium": 123847,
+      "bid_pressure": 1.413269384492406
+    },
+    {
+      "vehicle_class": "Category B",
+      "month": "2026-06",
+      "bidding_no": 2,
+      "quota": 883,
+      "bids_received": 1202,
+      "premium": 123502,
+      "bid_pressure": 1.3612684031710078
+    }
+  ],
+  "recent_summary": [
+    {
+      "vehicle_class": "Category A",
+      "latest_premium": 123847,
+      "latest_quota": 1251,
+      "latest_bid_pressure": 1.413,
+      "median_premium": 98324.0,
+      "median_quota": 1040.5,
+      "median_bid_pressure": 1.462,
+      "max_premium": 128105
+    },
+    {
+      "vehicle_class": "Category B",
+      "latest_premium": 123502,
+      "latest_quota": 883,
+      "latest_bid_pressure": 1.361,
+      "median_premium": 116647.5,
+      "median_quota": 689.5,
+      "median_bid_pressure": 1.483,
+      "max_premium": 150001
+    }
+  ],
+  "coef": {
+    "Intercept": 0.6403,
+    "log_quota": -0.0151,
+    "log_bid_pressure": 0.1399,
+    "log_premium_lag1": 0.9445,
+    "cat_b": 0.0072,
+    "bid2": 0.0082,
+    "post_covid": 0.0334
+  },
+  "fixed_demand_quota_elasticity": -0.155,
+  "scenario_method": "Exact log-change simulation using log_quota and log_bid_pressure coefficients.",
+  "holdout_mae_for_uncertainty": 3955,
+  "segment_elasticities": [
+    {
+      "segment": "Category A only",
+      "rows": 329,
+      "direct_quota_elasticity": -0.009,
+      "bid_pressure_elasticity": 0.114,
+      "fixed_demand_quota_elasticity": -0.123,
+      "r2": 0.966
+    },
+    {
+      "segment": "Category B only",
+      "rows": 329,
+      "direct_quota_elasticity": -0.028,
+      "bid_pressure_elasticity": 0.172,
+      "fixed_demand_quota_elasticity": -0.2,
+      "r2": 0.97
+    },
+    {
+      "segment": "Pre-COVID regime",
+      "rows": 490,
+      "direct_quota_elasticity": -0.016,
+      "bid_pressure_elasticity": 0.134,
+      "fixed_demand_quota_elasticity": -0.15,
+      "r2": 0.956
+    },
+    {
+      "segment": "Post-COVID regime",
+      "rows": 168,
+      "direct_quota_elasticity": -0.072,
+      "bid_pressure_elasticity": 0.245,
+      "fixed_demand_quota_elasticity": -0.316,
+      "r2": 0.985
+    }
+  ]
+}

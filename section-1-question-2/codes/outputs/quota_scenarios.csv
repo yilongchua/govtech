@@ -1,0 +1,9 @@
+vehicle_class,baseline_month,baseline_quota,baseline_premium,extra_certificates,quota_change_pct,estimated_price_change_pct,estimated_premium_after_change,estimated_dollar_change
+Category A,2026-06,1251,123847,25,2.0,-0.03,123810,-37
+Category A,2026-06,1251,123847,50,4.0,-0.06,123772,-75
+Category A,2026-06,1251,123847,100,8.0,-0.12,123697,-150
+Category A,2026-06,1251,123847,200,16.0,-0.24,123548,-299
+Category B,2026-06,883,123502,25,2.8,-0.04,123449,-53
+Category B,2026-06,883,123502,50,5.7,-0.09,123396,-106
+Category B,2026-06,883,123502,100,11.3,-0.17,123290,-212
+Category B,2026-06,883,123502,200,22.7,-0.34,123079,-423

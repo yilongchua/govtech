@@ -1,0 +1,1968 @@
+{
+  "job_id": "c1aaf24be796",
+  "created_at": "2026-06-29T22:37:34.205483+00:00",
+  "inputs": {
+    "reference_path": "tests/fixtures/history_2174_paper_1_gold.json",
+    "keys": [
+      "objectives",
+      "paper_code",
+      "question_count",
+      "section_a_marks",
+      "section_b_candidate_marks",
+      "source_count",
+      "topic_weightage",
+      "topics",
+      "total_marks"
+    ]
+  },
+  "prompts": [
+    {
+      "name": "first_page_check",
+      "prompt_version": "classify_first_page.j2:2026-06-29",
+      "prompt": "# Role\n\nYou are an exam-document intake classifier for an education analytics pipeline.\n\n# Objective\n\nDecide whether the first page image is an examination paper cover page and extract the subject-level routing metadata. The downstream pipeline will use the detected subject and paper code to choose the best syllabus family or a generic fallback route.\n\n# Task\n\n1. Inspect the first page image.\n2. Decide whether it is an exam-paper cover page.\n3. Extract the subject, paper code, paper title, and exam year when visible.\n4. Prefer exact text from the page over inference.\n5. If the subject is not clear, return `unknown`.\n6. Return JSON only. Do not include Markdown fences or explanatory text.\n\n# Output\n\nReturn JSON matching this schema:\n\n```json\n{\n  \"properties\": {\n    \"is_exam_paper\": {\n      \"title\": \"Is Exam Paper\",\n      \"type\": \"boolean\"\n    },\n    \"subject\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Subject\"\n    },\n    \"paper_code\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Paper Code\"\n    },\n    \"paper_title\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Paper Title\"\n    },\n    \"exam_year\": {\n      \"anyOf\": [\n        {\n          \"type\": \"integer\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Exam Year\"\n    },\n    \"reasons\": {\n      \"default\": [],\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Reasons\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"is_exam_paper\"\n  ],\n  \"title\": \"FirstPageCheck\",\n  \"type\": \"object\"\n}\n```",
+      "raw_response": "mock"
+    }
+  ],
+  "outputs": {
+    "raw_model_response": {
+      "first_page_check": {
+        "is_exam_paper": true,
+        "subject": "History",
+        "paper_code": "2174/01",
+        "paper_title": "Paper 1 Extension of European control in Southeast Asia and challenges to European dominance",
+        "exam_year": 2024,
+        "reasons": [
+          "Mock classifier for deterministic local testing."
+        ]
+      },
+      "raw_response": "mock",
+      "prompt": "# Role\n\nYou are an exam-document intake classifier for an education analytics pipeline.\n\n# Objective\n\nDecide whether the first page image is an examination paper cover page and extract the subject-level routing metadata. The downstream pipeline will use the detected subject and paper code to choose the best syllabus family or a generic fallback route.\n\n# Task\n\n1. Inspect the first page image.\n2. Decide whether it is an exam-paper cover page.\n3. Extract the subject, paper code, paper title, and exam year when visible.\n4. Prefer exact text from the page over inference.\n5. If the subject is not clear, return `unknown`.\n6. Return JSON only. Do not include Markdown fences or explanatory text.\n\n# Output\n\nReturn JSON matching this schema:\n\n```json\n{\n  \"properties\": {\n    \"is_exam_paper\": {\n      \"title\": \"Is Exam Paper\",\n      \"type\": \"boolean\"\n    },\n    \"subject\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Subject\"\n    },\n    \"paper_code\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Paper Code\"\n    },\n    \"paper_title\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Paper Title\"\n    },\n    \"exam_year\": {\n      \"anyOf\": [\n        {\n          \"type\": \"integer\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Exam Year\"\n    },\n    \"reasons\": {\n      \"default\": [],\n      \"items\": {\n        \"type\": \"string\"\n      },\n      \"title\": \"Reasons\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"is_exam_paper\"\n  ],\n  \"title\": \"FirstPageCheck\",\n  \"type\": \"object\"\n}\n```",
+      "prompt_version": "classify_first_page.j2:2026-06-29"
+    },
+    "raw_extraction": {
+      "first_page_check": {
+        "is_exam_paper": true,
+        "subject": "History",
+        "paper_code": "2174/01",
+        "paper_title": "Paper 1 Extension of European control in Southeast Asia and challenges to European dominance",
+        "exam_year": 2024,
+        "reasons": [
+          "Mock classifier for deterministic local testing."
+        ]
+      },
+      "markdown_path": "/Users/YLChua/Desktop/govtech/section-2-case-study/data/processed/markdown/c1aaf24be796/exam.md",
+      "pdf_sha256": "035e1704e1ad71d769a33793b57fb45038dd9f17815cd331c24a15b0c377116b",
+      "exam_extraction": {
+        "strategy": "mock_llm_exam_extraction",
+        "prompt": "# Role\n\nYou are a structured extraction engine for examination papers across subjects.\n\n# Objective\n\nConvert the uploaded exam paper text into an auditable `ExamPaper` JSON object. The output will be compared against syllabus objectives, component rules, and topic-weightage expectations.\nUse the syllabus context to understand expected paper components, question types, assessment objectives, topic vocabulary, and subject-specific features. Do not perform final topic classification here; downstream code maps extracted questions to topics and assessment objectives.\n\n# Task\n\n1. Extract paper metadata: subject, paper code, title, exam year, duration, and total marks.\n2. Identify all sections/components exactly as shown in the paper.\n3. Extract every question id, prompt, mark value, required source references, and page number when available.\n4. Preserve `OR` / either-or relationships using `choice_group`; leave `choice_group` empty for compulsory questions.\n5. Extract all sources/stimulus materials, including source id, source type, attribution, date, text, and page number. Every extracted source must have `page_number`.\n6. Add issue records for missing marks, missing source references, ambiguous question ids, or image-only sources that need vision interpretation.\n7. Return JSON only. Do not include Markdown fences or explanatory text.\n\n# Input Context\n\nSubject route: `History`\n\nFirst-page check:\n\n```json\n{\"exam_year\": 2024, \"is_exam_paper\": true, \"paper_code\": \"2174/01\", \"paper_title\": \"Paper 1 Extension of European control in Southeast Asia and challenges to European dominance\", \"reasons\": [\"Mock classifier for deterministic local testing.\"], \"subject\": \"History\"}\n```\n\nSyllabus context:\n\n```json\n{\"components\": [{\"marks\": 30, \"name\": \"Source-Based Case Study\", \"objectives\": [\"AO1\", \"AO3\"], \"paper\": \"2174/01\", \"rules\": [\"Maximum of 6 sources\", \"Q1(a)-Q1(e)\"], \"section\": \"A\", \"weighting_percent\": null}, {\"marks\": 20, \"name\": \"Essay Questions\", \"objectives\": [\"AO1\", \"AO2\"], \"paper\": \"2174/01\", \"rules\": [\"Answer 2 out of 3 questions\", \"Each question carries 10 marks\"], \"section\": \"B\", \"weighting_percent\": null}, {\"marks\": 30, \"name\": \"Source-Based Case Study\", \"objectives\": [\"AO1\", \"AO3\"], \"paper\": \"2174/02\", \"rules\": [\"Maximum of 6 sources\", \"Q1(a)-Q1(e)\"], \"section\": \"A\", \"weighting_percent\": null}, {\"marks\": 20, \"name\": \"Essay Questions\", \"objectives\": [\"AO1\", \"AO2\"], \"paper\": \"2174/02\", \"rules\": [\"Answer 2 out of 3 questions\", \"Each question carries 10 marks\"], \"section\": \"B\", \"weighting_percent\": null}], \"objectives\": [{\"ao_id\": \"AO1\", \"description\": \"select, organise and use relevant historical knowledge in context.\", \"name\": \"Deploy Knowledge\", \"skills\": [\"select\", \"organise\", \"use relevant historical knowledge\"], \"source_page\": 5}, {\"ao_id\": \"AO2\", \"description\": \"analyse and explain historical events and periods using key historical concepts to arrive at a reasoned conclusion.\", \"name\": \"Construct Explanation and Communicate Historical Knowledge\", \"skills\": [\"analyse\", \"explain\", \"reasoned conclusion\"], \"source_page\": 5}, {\"ao_id\": \"AO3\", \"description\": \"interpret, evaluate and use a range of sources as evidence in their historical context.\", \"name\": \"Interpret and Evaluate Source Materials\", \"skills\": [\"comprehend\", \"infer\", \"compare\", \"detect bias\", \"establish utility\", \"draw conclusions\"], \"source_page\": 5}], \"subject\": \"History\", \"subject_code\": \"2174\", \"topics\": [{\"is_source_based_eligible\": true, \"key_concepts\": [], \"paper\": \"2174/01\", \"source_page\": 7, \"subtopics\": [\"British Malaya\", \"Dutch Indonesia\", \"French Vietnam\"], \"topic\": \"Extension of European control in Southeast Asia\", \"topic_id\": \"p1_colonial_sea\", \"unit\": \"Extension of European control in Southeast Asia\"}, {\"is_source_based_eligible\": false, \"key_concepts\": [], \"paper\": \"2174/01\", \"source_page\": 13, \"subtopics\": [\"Treaty of Versailles\", \"War Guilt Clause\", \"reparations\"], \"topic\": \"Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s\", \"topic_id\": \"p1_versailles\", \"unit\": \"After World War I\"}, {\"is_source_based_eligible\": true, \"key_concepts\": [], \"paper\": \"2174/01\", \"source_page\": 13, \"subtopics\": [\"rise of Hitler\", \"consolidation of Nazi rule\"], \"topic\": \"Case Study of Nazi Germany\", \"topic_id\": \"p1_nazi_germany\", \"unit\": \"Rise of Authoritarian Regimes\"}, {\"is_source_based_eligible\": true, \"key_concepts\": [\"Appeasement\", \"Expansionism\", \"Alliances\"], \"paper\": \"2174/01\", \"source_page\": 14, \"subtopics\": [\"appeasement\", \"Munich Agreement\", \"Germany\\u0027s aggressive foreign policy\"], \"topic\": \"Key developments leading to the outbreak of World War II in Europe\", \"topic_id\": \"p1_wwii_europe\", \"unit\": \"War in Europe and the Asia-Pacific\"}, {\"is_source_based_eligible\": false, \"key_concepts\": [\"Theatres of war\", \"Expansionism\", \"Militarism\"], \"paper\": \"2174/01\", \"source_page\": 14, \"subtopics\": [\"US-Japan relations\", \"Japan\\u0027s expansionist foreign policy\", \"Pearl Harbour\"], \"topic\": \"Key developments leading to the outbreak of World War II in the Asia-Pacific\", \"topic_id\": \"p1_wwii_asia_pacific\", \"unit\": \"War in Europe and the Asia-Pacific\"}, {\"is_source_based_eligible\": true, \"key_concepts\": [\"Decolonisation\", \"Insurgency\", \"Counter-insurgency\"], \"paper\": \"2174/02\", \"source_page\": 18, \"subtopics\": [\"Malayan Emergency\", \"Briggs Plan\", \"Baling Peace Talks\", \"British counter-insurgency\"], \"topic\": \"Why did the Communist insurgency in Malaya fail?\", \"topic_id\": \"p2_malayan_emergency\", \"unit\": \"Decolonisation in Southeast Asia\"}, {\"is_source_based_eligible\": false, \"key_concepts\": [\"Ideological conflict\", \"Superpower rivalry\"], \"paper\": \"2174/02\", \"source_page\": 17, \"subtopics\": [\"Soviet expansion\", \"containment\", \"division of Germany\"], \"topic\": \"Origins and development of the Cold War in Europe\", \"topic_id\": \"p2_cold_war_origins\", \"unit\": \"The Cold War\"}, {\"is_source_based_eligible\": false, \"key_concepts\": [\"Containment\", \"Collective security\"], \"paper\": \"2174/02\", \"source_page\": 17, \"subtopics\": [\"United Nations intervention\", \"China\", \"Korea\"], \"topic\": \"The Korean War and the role of the United Nations\", \"topic_id\": \"p2_korean_war\", \"unit\": \"The Cold War\"}, {\"is_source_based_eligible\": false, \"key_concepts\": [\"Proxy war\", \"Containment\"], \"paper\": \"2174/02\", \"source_page\": 17, \"subtopics\": [\"USA\", \"Vietnam\", \"communism in Southeast Asia\"], \"topic\": \"The Vietnam War and its impact on the Cold War\", \"topic_id\": \"p2_vietnam_war\", \"unit\": \"The Cold War\"}, {\"is_source_based_eligible\": false, \"key_concepts\": [\"Reform\", \"Collapse of communism\"], \"paper\": \"2174/02\", \"source_page\": 17, \"subtopics\": [\"Gorbachev\", \"Eastern Europe\", \"end of the Cold War\"], \"topic\": \"The collapse of Soviet control over Eastern Europe\", \"topic_id\": \"p2_end_cold_war\", \"unit\": \"The Cold War\"}], \"year\": 2026}\n```\n\nPaper Markdown:\n\n```text\n# 2174_specimen_paper_1\n\nSource PDF: `2174_specimen_paper_1.pdf`\n\nPages: 6\n\n## Page 1\n\nThis document consists of 6 printed pages.\n© UCLES & MOE 2022 [Turn over\nMINISTRY OF EDUCATION, SINGAPORE\nin collaboration with\nCAMBRIDGE ASSESSMENT INTERNATIONAL EDUCATION\nGeneral Certificate of Education Ordinary Level\n*0123456789*\nHISTORY 2174/01\nPaper 1  Extension of European control in Southeast Asia and\n               challenges to European dominance, 1870s–1942 For examination from 2024\nSPECIMEN PAPER\n 1 hour 50 minutes\nNo Additional Materials are required.\nREAD THESE INSTRUCTIONS FIRST\nAn answer booklet will be provided with this question paper. You should follow the instructions on the front\ncover of the answer booklet. If you need additional answer paper ask the invigilator for a continuation booklet.\nSection A\nAnswer all parts of Question 1.\nSection B\nAnswer two questions.\nThe number of marks is given in brackets [  ] at the end of each question or part question.\n\n## Page 2\n\n2\n2174/01/SP/24© UCLES & MOE 2022\nSection A: Source-Based Case Study\nQuestion 1 is for all candidates.\nStudy the Background Information and the sources carefully, and then answer all the questions.\nYou may use any of the sources to help you answer the questions, in addition to those sources you\nare told to use. In answering the questions you should use your knowledge of the topic to help you\ninterpret and evaluate the sources.\n1 (a) Study Source A.\n  How useful is this source as evidence of Hitler’s foreign policy ambitions? Explain your\nanswer.  [6]\n (b) Study Source B.\n  Why do you think Rothermere wrote this letter? Explain your answer.  [5]\n (c) Study Sources C and D.\n  How far does Source D prove that Source C was wrong? Explain your answer.  [6]\n (d) Study Source E.\n  Do you think the cartoonist would have agreed with Chamberlain’s policy of appeasement?\nExplain your answer.   [5]\n (e) Study all the sources.\n  ‘Chamberlain was right to follow a policy of appeasement.’ How far do these sources support\nthis view? Use the sources and your knowledge to explain your answer.   [8]\n\n## Page 3\n\n3\n2174/01/SP/24© UCLES & MOE 2022 [Turn over\nWas Chamberlain right to follow a policy of appeasement towards Germany?\nBACKGROUND INFORMATION\nRead this carefully. It may help you answer some of the questions.\nFrom the time the Nazis came to power, Hitler followed an aggressive foreign policy. Britain and France\nhad to decide how to respond to this. Many people in Britain felt that Germany had been treated too\nharshly in the peace settlement after World War I and should therefore be allowed to break some\nof the terms of the Versailles Treaty. Amongst these people was Neville Chamberlain, who became\nBritish Prime Minister in 1937. He followed a policy of making concessions towards Germany, hoping\nthis would satisfy Hitler and preserve peace. This policy was known as appeasement. However, some\npeople, like Winston Churchill, warned that giving in to Hitler would just encourage him to make more\ndemands.\nAt the Munich Conference in late September 1938, Chamberlain reached an agreement with Hitler in\nwhich it was agreed that large areas of Czechoslovakia (the ‘Sudetenland’) should be handed over\nto Germany. This action appeared to prevent war breaking out and Chamberlain was given a hero’s\nwelcome when he returned to Britain. Yet less than one year later, Britain and Germany were at war.\nWas Chamberlain right to follow a policy of appeasement towards Germany?\nSource A:  A speech made by Hitler, addressing the German Reichstag, on 26 September 1938.\nI am grateful to Mr Chamberlain for his efforts. I assure him that the German people wish only for\npeace.\nThe Sudetenland is the last problem that must be solved – and it will be solved. It is the last territorial\nclaim which I have to make in Europe. The aims of our foreign policy are not unlimited. They are\nbased only on a determination to save the German people. In 1919 ten million Germans found\nthemselves beyond the frontiers of Germany. Life has been a nightmare for them. Of all the groups\nof Germans in Europe, those in Czechoslovakia have the highest mortality rate, their child poverty\nrate is the highest, their unemployment is by far the highest.\nFor twenty years, the Germans in Czechoslovakia and in Germany had to sit back and watch\nbecause Germany was defenceless and could not protect itself in the new ‘democratic’ world.\nSource B:  A letter from Lord Rothermere, owner of several British newspapers, to Winston Churchill\non 15 October 1938. Rothermere was a supporter of Chamberlain.\nChamberlain is Prime Minister and the leader of the Party to which you too belong. Any member of\nhis Party who criticises runs the risk of making themselves very unpopular with the people of the\ncountry.\nThe British public is so terrified of being bombed that they will support anyone who keeps them out\nof war. I always knew the public had no desire to stand up to the Dictators and I always knew that\nwhen it came to choosing between peace or war ninety-five per cent of the electors would rally to the\npeace policy, however humiliating such a policy might be.\nI do hope you will become less critical of the government’s policy. If you became so unpopular that\nyou lost your seat and were no longer in Parliament, it would be a loss to the nation.\n\n## Page 4\n\n4\n2174/01/SP/24© UCLES & MOE 2022\nSource C:  Neville Chamberlain, British Prime Minister, speaking in the British Parliament, 3 October\n1938.\nBefore giving a verdict upon the Munich agreement, we should do well to avoid describing it as a\npersonal or a national triumph for anyone. The real triumph is that it has shown that representatives\nof four Great Powers can find it possible to agree on a way of carrying out a difficult and delicate\noperation by discussion instead of by force of arms. By doing this, they have averted a catastrophe\nwhich would have ended civilisation as we have known it.\nWe are relieved at our escape from this great peril of war. There is also a deep feeling of sympathy\nfor the Czechs, a small and gallant nation, in the hour of their national grief and loss. But I have done\nnothing to be ashamed of.\nSource D:  A pamphlet titled ‘The full facts of the Czech crisis’ produced by the leading opposition\nparty in Britain, November 1938.\nMr Chamberlain has continually referred to Hitler’s assurance that he has no further territorial claims\nin Europe. But Hitler has made such claims on innumerable occasions. All such assurances are\nutterly worthless. If frontiers are changed whenever the Nazi Party, by propaganda and threat of war,\nhas caused disturbance in another country, there is not a state in Europe that is secure. In order to\ncollapse, the Czechs did not need the friendship of the Western Powers. This friendship could only\nhave any meaning if it were aimed at preserving the integrity of Czechoslovakia and curbing Nazi\nexpansionism. ‘It sounds like a mockery,’ wrote a Czech newspaper, ‘when the British Prime Minister\ndeclares that Czechoslovakia was saved from disaster. It is as though one should say after cutting\noff a man’s arms and legs that he has been saved from death. This sort of logic is incomprehensible.’\nSource E:  A cartoon published in a British newspaper, 9 September 1938. Hitler is holding a banner\nsaying, ‘All Germans everywhere are mine’.\n NIGHTMARE WAITING LIST\n\n## Page 5\n\n5\n2174/01/SP/24© UCLES & MOE 2022 [Turn over\nSource F: An online article written in a History journal in 2021.\nThe USA did not approve of Chamberlain’s policies. American diplomats and politicians worked\ntirelessly to make Britain realise that as long as it continued to believe in the possibility of dealing\nhonestly and realistically with Hitler, it would not succeed in its desire to stop Hitler’s policy of\nexpanding German territory.\nInstead, the USA tried to persuade Britain to replace its policy towards Germany with an aggressive\none, based on deterrence. This changed policy would need to show the desire to use the military\nforces Britain possessed (despite the fact that Britain had only two divisions to send to the European\nmainland in August 1938). Only then would the Nazis understand that they would not get away with\nthreatening Czechoslovakia and other countries, just as they had threatened Austria.\n\n## Page 6\n\n6\n2174/01/SP/24© UCLES & MOE 2022\nCopyright Acknowledgements:\nQuestion 1 Source E © Cartoon by David Low; Nightmare waiting list; dmg media licensing.\nPermission to reproduce items where third-party owned material protected by copyright is included has been sought and cleared where possible. Every\nreasonable effort has been made by the publisher (UCLES) to trace copyright holders, but if any items requiring clearance have unwittingly been included, the\npublisher will be pleased to make amends at the earliest possible opportunity.\nCambridge Assessment International Education is part of Cambridge Assessment. Cambridge Assessment is the brand name of the University of Cambridge\nLocal Examinations Syndicate (UCLES), which is a department of the University of Cambridge.\nSection B: Essays\nAnswer two questions.\n2 (a) ‘The main reason for the Dutch colonisation of Indonesia from the 1870s was to obtain raw\nmaterials.’ How far do you agree with this statement? Explain your answer.  [10]\nOR\n2 (b) ‘The main reason for the French colonisation of Vietnam from the 1870s was to obtain raw\nmaterials.’ How far do you agree with this statement? Explain your answer.  [10]\n3 ‘Germans hated the Treaty of Versailles because it blamed them for starting World War I.’ How far\ndo you agree with this statement? Explain your answer.  [10]\n4 ‘US policy towards Japan in the 1930s was responsible for the outbreak of World War II in the\nAsia-Pacific.’ How far do you agree with this statement? Explain your answer.  [10]\n\n```\n\n# Output\n\nReturn JSON matching this schema:\n\n```json\n{\n  \"$defs\": {\n    \"ExamQuestion\": {\n      \"properties\": {\n        \"question_id\": {\n          \"title\": \"Question Id\",\n          \"type\": \"string\"\n        },\n        \"section\": {\n          \"title\": \"Section\",\n          \"type\": \"string\"\n        },\n        \"prompt\": {\n          \"title\": \"Prompt\",\n          \"type\": \"string\"\n        },\n        \"marks\": {\n          \"anyOf\": [\n            {\n              \"type\": \"integer\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Marks\"\n        },\n        \"required_sources\": {\n          \"default\": [],\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"title\": \"Required Sources\",\n          \"type\": \"array\"\n        },\n        \"choice_group\": {\n          \"anyOf\": [\n            {\n              \"type\": \"string\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Choice Group\"\n        },\n        \"page_number\": {\n          \"anyOf\": [\n            {\n              \"type\": \"integer\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Page Number\"\n        }\n      },\n      \"required\": [\n        \"question_id\",\n        \"section\",\n        \"prompt\"\n      ],\n      \"title\": \"ExamQuestion\",\n      \"type\": \"object\"\n    },\n    \"SourceItem\": {\n      \"properties\": {\n        \"source_id\": {\n          \"title\": \"Source Id\",\n          \"type\": \"string\"\n        },\n        \"source_type\": {\n          \"default\": \"text\",\n          \"title\": \"Source Type\",\n          \"type\": \"string\"\n        },\n        \"text\": {\n          \"anyOf\": [\n            {\n              \"type\": \"string\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Text\"\n        },\n        \"image_path\": {\n          \"anyOf\": [\n            {\n              \"type\": \"string\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Image Path\"\n        },\n        \"attribution\": {\n          \"anyOf\": [\n            {\n              \"type\": \"string\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Attribution\"\n        },\n        \"date\": {\n          \"anyOf\": [\n            {\n              \"type\": \"string\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Date\"\n        },\n        \"page_number\": {\n          \"anyOf\": [\n            {\n              \"type\": \"integer\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Page Number\"\n        }\n      },\n      \"required\": [\n        \"source_id\"\n      ],\n      \"title\": \"SourceItem\",\n      \"type\": \"object\"\n    },\n    \"ValidationIssue\": {\n      \"properties\": {\n        \"code\": {\n          \"title\": \"Code\",\n          \"type\": \"string\"\n        },\n        \"severity\": {\n          \"enum\": [\n            \"INFO\",\n            \"WARNING\",\n            \"ERROR\"\n          ],\n          \"title\": \"Severity\",\n          \"type\": \"string\"\n        },\n        \"stage\": {\n          \"title\": \"Stage\",\n          \"type\": \"string\"\n        },\n        \"message\": {\n          \"title\": \"Message\",\n          \"type\": \"string\"\n        },\n        \"reason\": {\n          \"anyOf\": [\n            {\n              \"type\": \"string\"\n            },\n            {\n              \"type\": \"null\"\n            }\n          ],\n          \"default\": null,\n          \"title\": \"Reason\"\n        },\n        \"evidence\": {\n          \"title\": \"Evidence\",\n          \"type\": \"object\"\n        },\n        \"recoverable\": {\n          \"default\": true,\n          \"title\": \"Recoverable\",\n          \"type\": \"boolean\"\n        }\n      },\n      \"required\": [\n        \"code\",\n        \"severity\",\n        \"stage\",\n        \"message\"\n      ],\n      \"title\": \"ValidationIssue\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"issues\": {\n      \"items\": {\n        \"$ref\": \"#/$defs/ValidationIssue\"\n      },\n      \"title\": \"Issues\",\n      \"type\": \"array\"\n    },\n    \"subject\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Subject\"\n    },\n    \"paper_code\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Paper Code\"\n    },\n    \"paper_title\": {\n      \"anyOf\": [\n        {\n          \"type\": \"string\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Paper Title\"\n    },\n    \"exam_year\": {\n      \"anyOf\": [\n        {\n          \"type\": \"integer\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Exam Year\"\n    },\n    \"duration_minutes\": {\n      \"anyOf\": [\n        {\n          \"type\": \"integer\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Duration Minutes\"\n    },\n    \"total_marks\": {\n      \"anyOf\": [\n        {\n          \"type\": \"integer\"\n        },\n        {\n          \"type\": \"null\"\n        }\n      ],\n      \"default\": null,\n      \"title\": \"Total Marks\"\n    },\n    \"raw_pdf_path\": {\n      \"title\": \"Raw Pdf Path\",\n      \"type\": \"string\"\n    },\n    \"markdown_path\": {\n      \"title\": \"Markdown Path\",\n      \"type\": \"string\"\n    },\n    \"sources\": {\n      \"default\": [],\n      \"items\": {\n        \"$ref\": \"#/$defs/SourceItem\"\n      },\n      \"title\": \"Sources\",\n      \"type\": \"array\"\n    },\n    \"questions\": {\n      \"default\": [],\n      \"items\": {\n        \"$ref\": \"#/$defs/ExamQuestion\"\n      },\n      \"title\": \"Questions\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"raw_pdf_path\",\n    \"markdown_path\"\n  ],\n  \"title\": \"ExamPaper\",\n  \"type\": \"object\"\n}\n```",
+        "raw_response": "mock",
+        "parsed_extraction": {
+          "issues": [],
+          "subject": "History",
+          "paper_code": "2174/01",
+          "paper_title": "Paper 1 Extension of European control in Southeast Asia and challenges to European dominance, 1870s–1942",
+          "exam_year": 2024,
+          "duration_minutes": 110,
+          "total_marks": 50,
+          "raw_pdf_path": "data/raw/exam_pdfs/2174_specimen_paper_1.pdf",
+          "markdown_path": "/Users/YLChua/Desktop/govtech/section-2-case-study/data/processed/markdown/c1aaf24be796/exam.md",
+          "sources": [
+            {
+              "source_id": "A",
+              "source_type": "speech",
+              "text": "I am grateful to Mr Chamberlain for his efforts. I assure him that the German people wish only for\npeace.\nThe Sudetenland is the last problem that must be solved – and it will be solved. It is the last territorial\nclaim which I have to make in Europe. The aims of our foreign policy are not unlimited. They are\nbased only on a determination to save the German people. In 1919 ten million Germans found\nthemselves beyond the frontiers of Germany. Life has been a nightmare for them. Of all the groups\nof Germans in Europe, those in Czechoslovakia have the highest mortality rate, their child poverty\nrate is the highest, their unemployment is by far the highest.\nFor twenty years, the Germans in Czechoslovakia and in Germany had to sit back and watch\nbecause Germany was defenceless and could not protect itself in the new ‘democratic’ world.",
+              "image_path": null,
+              "attribution": "A speech made by Hitler, addressing the German Reichstag, on 26 September 1938.",
+              "date": null,
+              "page_number": 3
+            },
+            {
+              "source_id": "B",
+              "source_type": "letter",
+              "text": "on 15 October 1938. Rothermere was a supporter of Chamberlain.\nChamberlain is Prime Minister and the leader of the Party to which you too belong. Any member of\nhis Party who criticises runs the risk of making themselves very unpopular with the people of the\ncountry.\nThe British public is so terrified of being bombed that they will support anyone who keeps them out\nof war. I always knew the public had no desire to stand up to the Dictators and I always knew that\nwhen it came to choosing between peace or war ninety-five per cent of the electors would rally to the\npeace policy, however humiliating such a policy might be.\nI do hope you will become less critical of the government’s policy. If you became so unpopular that\nyou lost your seat and were no longer in Parliament, it would be a loss to the nation.",
+              "image_path": null,
+              "attribution": "A letter from Lord Rothermere, owner of several British newspapers, to Winston Churchill",
+              "date": null,
+              "page_number": 3
+            },
+            {
+              "source_id": "C",
+              "source_type": "text",
+              "text": "1938.\nBefore giving a verdict upon the Munich agreement, we should do well to avoid describing it as a\npersonal or a national triumph for anyone. The real triumph is that it has shown that representatives\nof four Great Powers can find it possible to agree on a way of carrying out a difficult and delicate\noperation by discussion instead of by force of arms. By doing this, they have averted a catastrophe\nwhich would have ended civilisation as we have known it.\nWe are relieved at our escape from this great peril of war. There is also a deep feeling of sympathy\nfor the Czechs, a small and gallant nation, in the hour of their national grief and loss. But I have done\nnothing to be ashamed of.",
+              "image_path": null,
+              "attribution": "Neville Chamberlain, British Prime Minister, speaking in the British Parliament, 3 October",
+              "date": null,
+              "page_number": 4
+            },
+            {
+              "source_id": "D",
+              "source_type": "text",
+              "text": "party in Britain, November 1938.\nMr Chamberlain has continually referred to Hitler’s assurance that he has no further territorial claims\nin Europe. But Hitler has made such claims on innumerable occasions. All such assurances are\nutterly worthless. If frontiers are changed whenever the Nazi Party, by propaganda and threat of war,\nhas caused disturbance in another country, there is not a state in Europe that is secure. In order to\ncollapse, the Czechs did not need the friendship of the Western Powers. This friendship could only\nhave any meaning if it were aimed at preserving the integrity of Czechoslovakia and curbing Nazi\nexpansionism. ‘It sounds like a mockery,’ wrote a Czech newspaper, ‘when the British Prime Minister\ndeclares that Czechoslovakia was saved from disaster. It is as though one should say after cutting\noff a man’s arms and legs that he has been saved from death. This sort of logic is incomprehensible.’",
+              "image_path": null,
+              "attribution": "A pamphlet titled ‘The full facts of the Czech crisis’ produced by the leading opposition",
+              "date": null,
+              "page_number": 4
+            },
+            {
+              "source_id": "E",
+              "source_type": "cartoon",
+              "text": "saying, ‘All Germans everywhere are mine’.\n NIGHTMARE WAITING LIST",
+              "image_path": null,
+              "attribution": "A cartoon published in a British newspaper, 9 September 1938. Hitler is holding a banner",
+              "date": null,
+              "page_number": 4
+            },
+            {
+              "source_id": "F",
+              "source_type": "text",
+              "text": "The USA did not approve of Chamberlain’s policies. American diplomats and politicians worked\ntirelessly to make Britain realise that as long as it continued to believe in the possibility of dealing\nhonestly and realistically with Hitler, it would not succeed in its desire to stop Hitler’s policy of\nexpanding German territory.\nInstead, the USA tried to persuade Britain to replace its policy towards Germany with an aggressive\none, based on deterrence. This changed policy would need to show the desire to use the military\nforces Britain possessed (despite the fact that Britain had only two divisions to send to the European\nmainland in August 1938). Only then would the Nazis understand that they would not get away with\nthreatening Czechoslovakia and other countries, just as they had threatened Austria.",
+              "image_path": null,
+              "attribution": "An online article written in a History journal in 2021.",
+              "date": null,
+              "page_number": 5
+            }
+          ],
+          "questions": [
+            {
+              "question_id": "1(a)",
+              "section": "A",
+              "prompt": "Study Source A. How useful is this source as evidence of Hitler’s foreign policy ambitions? Explain your answer.",
+              "marks": 6,
+              "required_sources": [
+                "A"
+              ],
+              "choice_group": null,
+              "page_number": 2
+            },
+            {
+              "question_id": "1(b)",
+              "section": "A",
+              "prompt": "Study Source B. Why do you think Rothermere wrote this letter? Explain your answer.",
+              "marks": 5,
+              "required_sources": [
+                "B"
+              ],
+              "choice_group": null,
+              "page_number": 2
+            },
+            {
+              "question_id": "1(c)",
+              "section": "A",
+              "prompt": "Study Sources C and D. How far does Source D prove that Source C was wrong? Explain your answer.",
+              "marks": 6,
+              "required_sources": [
+                "C",
+                "D",
+                "C"
+              ],
+              "choice_group": null,
+              "page_number": 2
+            },
+            {
+              "question_id": "1(d)",
+              "section": "A",
+              "prompt": "Study Source E. Do you think the cartoonist would have agreed with Chamberlain’s policy of appeasement? Explain your answer.",
+              "marks": 5,
+              "required_sources": [
+                "E"
+              ],
+              "choice_group": null,
+              "page_number": 2
+            },
+            {
+              "question_id": "1(e)",
+              "section": "A",
+              "prompt": "Study all the sources. ‘Chamberlain was right to follow a policy of appeasement.’ How far do these sources support this view? Use the sources and your knowledge to explain your answer.",
+              "marks": 8,
+              "required_sources": [],
+              "choice_group": null,
+              "page_number": 2
+            },
+            {
+              "question_id": "2(a)",
+              "section": "B",
+              "prompt": "‘The main reason for the Dutch colonisation of Indonesia from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+              "marks": 10,
+              "required_sources": [],
+              "choice_group": "2_either_or",
+              "page_number": 6
+            },
+            {
+              "question_id": "2(b)",
+              "section": "B",
+              "prompt": "‘The main reason for the French colonisation of Vietnam from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+              "marks": 10,
+              "required_sources": [],
+              "choice_group": "2_either_or",
+              "page_number": 6
+            },
+            {
+              "question_id": "3",
+              "section": "B",
+              "prompt": "‘Germans hated the Treaty of Versailles because it blamed them for starting World War I.’ How far do you agree with this statement? Explain your answer.",
+              "marks": 10,
+              "required_sources": [],
+              "choice_group": null,
+              "page_number": 6
+            },
+            {
+              "question_id": "4",
+              "section": "B",
+              "prompt": "‘US policy towards Japan in the 1930s was responsible for the outbreak of World War II in the Asia-Pacific.’ How far do you agree with this statement? Explain your answer.",
+              "marks": 10,
+              "required_sources": [],
+              "choice_group": null,
+              "page_number": 6
+            }
+          ]
+        },
+        "fallback_used": false,
+        "fallback_reason": null
+      }
+    },
+    "exam_structure": {
+      "issues": [],
+      "subject": "History",
+      "paper_code": "2174/01",
+      "paper_title": "Paper 1 Extension of European control in Southeast Asia and challenges to European dominance, 1870s–1942",
+      "exam_year": 2024,
+      "duration_minutes": 110,
+      "total_marks": 50,
+      "raw_pdf_path": "data/raw/exam_pdfs/2174_specimen_paper_1.pdf",
+      "markdown_path": "/Users/YLChua/Desktop/govtech/section-2-case-study/data/processed/markdown/c1aaf24be796/exam.md",
+      "sources": [
+        {
+          "source_id": "A",
+          "source_type": "speech",
+          "text": "I am grateful to Mr Chamberlain for his efforts. I assure him that the German people wish only for\npeace.\nThe Sudetenland is the last problem that must be solved – and it will be solved. It is the last territorial\nclaim which I have to make in Europe. The aims of our foreign policy are not unlimited. They are\nbased only on a determination to save the German people. In 1919 ten million Germans found\nthemselves beyond the frontiers of Germany. Life has been a nightmare for them. Of all the groups\nof Germans in Europe, those in Czechoslovakia have the highest mortality rate, their child poverty\nrate is the highest, their unemployment is by far the highest.\nFor twenty years, the Germans in Czechoslovakia and in Germany had to sit back and watch\nbecause Germany was defenceless and could not protect itself in the new ‘democratic’ world.",
+          "image_path": null,
+          "attribution": "A speech made by Hitler, addressing the German Reichstag, on 26 September 1938.",
+          "date": null,
+          "page_number": 3
+        },
+        {
+          "source_id": "B",
+          "source_type": "letter",
+          "text": "on 15 October 1938. Rothermere was a supporter of Chamberlain.\nChamberlain is Prime Minister and the leader of the Party to which you too belong. Any member of\nhis Party who criticises runs the risk of making themselves very unpopular with the people of the\ncountry.\nThe British public is so terrified of being bombed that they will support anyone who keeps them out\nof war. I always knew the public had no desire to stand up to the Dictators and I always knew that\nwhen it came to choosing between peace or war ninety-five per cent of the electors would rally to the\npeace policy, however humiliating such a policy might be.\nI do hope you will become less critical of the government’s policy. If you became so unpopular that\nyou lost your seat and were no longer in Parliament, it would be a loss to the nation.",
+          "image_path": null,
+          "attribution": "A letter from Lord Rothermere, owner of several British newspapers, to Winston Churchill",
+          "date": null,
+          "page_number": 3
+        },
+        {
+          "source_id": "C",
+          "source_type": "text",
+          "text": "1938.\nBefore giving a verdict upon the Munich agreement, we should do well to avoid describing it as a\npersonal or a national triumph for anyone. The real triumph is that it has shown that representatives\nof four Great Powers can find it possible to agree on a way of carrying out a difficult and delicate\noperation by discussion instead of by force of arms. By doing this, they have averted a catastrophe\nwhich would have ended civilisation as we have known it.\nWe are relieved at our escape from this great peril of war. There is also a deep feeling of sympathy\nfor the Czechs, a small and gallant nation, in the hour of their national grief and loss. But I have done\nnothing to be ashamed of.",
+          "image_path": null,
+          "attribution": "Neville Chamberlain, British Prime Minister, speaking in the British Parliament, 3 October",
+          "date": null,
+          "page_number": 4
+        },
+        {
+          "source_id": "D",
+          "source_type": "text",
+          "text": "party in Britain, November 1938.\nMr Chamberlain has continually referred to Hitler’s assurance that he has no further territorial claims\nin Europe. But Hitler has made such claims on innumerable occasions. All such assurances are\nutterly worthless. If frontiers are changed whenever the Nazi Party, by propaganda and threat of war,\nhas caused disturbance in another country, there is not a state in Europe that is secure. In order to\ncollapse, the Czechs did not need the friendship of the Western Powers. This friendship could only\nhave any meaning if it were aimed at preserving the integrity of Czechoslovakia and curbing Nazi\nexpansionism. ‘It sounds like a mockery,’ wrote a Czech newspaper, ‘when the British Prime Minister\ndeclares that Czechoslovakia was saved from disaster. It is as though one should say after cutting\noff a man’s arms and legs that he has been saved from death. This sort of logic is incomprehensible.’",
+          "image_path": null,
+          "attribution": "A pamphlet titled ‘The full facts of the Czech crisis’ produced by the leading opposition",
+          "date": null,
+          "page_number": 4
+        },
+        {
+          "source_id": "E",
+          "source_type": "cartoon",
+          "text": "saying, ‘All Germans everywhere are mine’.\n NIGHTMARE WAITING LIST",
+          "image_path": null,
+          "attribution": "A cartoon published in a British newspaper, 9 September 1938. Hitler is holding a banner",
+          "date": null,
+          "page_number": 4
+        },
+        {
+          "source_id": "F",
+          "source_type": "text",
+          "text": "The USA did not approve of Chamberlain’s policies. American diplomats and politicians worked\ntirelessly to make Britain realise that as long as it continued to believe in the possibility of dealing\nhonestly and realistically with Hitler, it would not succeed in its desire to stop Hitler’s policy of\nexpanding German territory.\nInstead, the USA tried to persuade Britain to replace its policy towards Germany with an aggressive\none, based on deterrence. This changed policy would need to show the desire to use the military\nforces Britain possessed (despite the fact that Britain had only two divisions to send to the European\nmainland in August 1938). Only then would the Nazis understand that they would not get away with\nthreatening Czechoslovakia and other countries, just as they had threatened Austria.",
+          "image_path": null,
+          "attribution": "An online article written in a History journal in 2021.",
+          "date": null,
+          "page_number": 5
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "1(a)",
+          "section": "A",
+          "prompt": "Study Source A. How useful is this source as evidence of Hitler’s foreign policy ambitions? Explain your answer.",
+          "marks": 6,
+          "required_sources": [
+            "A"
+          ],
+          "choice_group": null,
+          "page_number": 2
+        },
+        {
+          "question_id": "1(b)",
+          "section": "A",
+          "prompt": "Study Source B. Why do you think Rothermere wrote this letter? Explain your answer.",
+          "marks": 5,
+          "required_sources": [
+            "B"
+          ],
+          "choice_group": null,
+          "page_number": 2
+        },
+        {
+          "question_id": "1(c)",
+          "section": "A",
+          "prompt": "Study Sources C and D. How far does Source D prove that Source C was wrong? Explain your answer.",
+          "marks": 6,
+          "required_sources": [
+            "C",
+            "D",
+            "C"
+          ],
+          "choice_group": null,
+          "page_number": 2
+        },
+        {
+          "question_id": "1(d)",
+          "section": "A",
+          "prompt": "Study Source E. Do you think the cartoonist would have agreed with Chamberlain’s policy of appeasement? Explain your answer.",
+          "marks": 5,
+          "required_sources": [
+            "E"
+          ],
+          "choice_group": null,
+          "page_number": 2
+        },
+        {
+          "question_id": "1(e)",
+          "section": "A",
+          "prompt": "Study all the sources. ‘Chamberlain was right to follow a policy of appeasement.’ How far do these sources support this view? Use the sources and your knowledge to explain your answer.",
+          "marks": 8,
+          "required_sources": [],
+          "choice_group": null,
+          "page_number": 2
+        },
+        {
+          "question_id": "2(a)",
+          "section": "B",
+          "prompt": "‘The main reason for the Dutch colonisation of Indonesia from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+          "marks": 10,
+          "required_sources": [],
+          "choice_group": "2_either_or",
+          "page_number": 6
+        },
+        {
+          "question_id": "2(b)",
+          "section": "B",
+          "prompt": "‘The main reason for the French colonisation of Vietnam from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+          "marks": 10,
+          "required_sources": [],
+          "choice_group": "2_either_or",
+          "page_number": 6
+        },
+        {
+          "question_id": "3",
+          "section": "B",
+          "prompt": "‘Germans hated the Treaty of Versailles because it blamed them for starting World War I.’ How far do you agree with this statement? Explain your answer.",
+          "marks": 10,
+          "required_sources": [],
+          "choice_group": null,
+          "page_number": 6
+        },
+        {
+          "question_id": "4",
+          "section": "B",
+          "prompt": "‘US policy towards Japan in the 1930s was responsible for the outbreak of World War II in the Asia-Pacific.’ How far do you agree with this statement? Explain your answer.",
+          "marks": 10,
+          "required_sources": [],
+          "choice_group": null,
+          "page_number": 6
+        }
+      ]
+    },
+    "comparison_report": {
+      "issues": [],
+      "job_id": "c1aaf24be796",
+      "syllabus": {
+        "issues": [],
+        "subject": "History",
+        "subject_code": "2174",
+        "year": 2026,
+        "source_url": "https://isomer-user-content.by.gov.sg/334/3622b032-4be0-497a-9192-399cb6c98b65/2174_y26_sy.pdf",
+        "pdf_path": "/Users/YLChua/Desktop/govtech/section-2-case-study/2174_y26_sy.pdf",
+        "markdown_path": "/Users/YLChua/Desktop/govtech/section-2-case-study/2174_y26_sy.md",
+        "objectives": [
+          {
+            "ao_id": "AO1",
+            "name": "Deploy Knowledge",
+            "description": "select, organise and use relevant historical knowledge in context.",
+            "skills": [
+              "select",
+              "organise",
+              "use relevant historical knowledge"
+            ],
+            "source_page": 5
+          },
+          {
+            "ao_id": "AO2",
+            "name": "Construct Explanation and Communicate Historical Knowledge",
+            "description": "analyse and explain historical events and periods using key historical concepts to arrive at a reasoned conclusion.",
+            "skills": [
+              "analyse",
+              "explain",
+              "reasoned conclusion"
+            ],
+            "source_page": 5
+          },
+          {
+            "ao_id": "AO3",
+            "name": "Interpret and Evaluate Source Materials",
+            "description": "interpret, evaluate and use a range of sources as evidence in their historical context.",
+            "skills": [
+              "comprehend",
+              "infer",
+              "compare",
+              "detect bias",
+              "establish utility",
+              "draw conclusions"
+            ],
+            "source_page": 5
+          }
+        ],
+        "components": [
+          {
+            "paper": "2174/01",
+            "section": "A",
+            "name": "Source-Based Case Study",
+            "marks": 30,
+            "weighting_percent": null,
+            "objectives": [
+              "AO1",
+              "AO3"
+            ],
+            "rules": [
+              "Maximum of 6 sources",
+              "Q1(a)-Q1(e)"
+            ]
+          },
+          {
+            "paper": "2174/01",
+            "section": "B",
+            "name": "Essay Questions",
+            "marks": 20,
+            "weighting_percent": null,
+            "objectives": [
+              "AO1",
+              "AO2"
+            ],
+            "rules": [
+              "Answer 2 out of 3 questions",
+              "Each question carries 10 marks"
+            ]
+          },
+          {
+            "paper": "2174/02",
+            "section": "A",
+            "name": "Source-Based Case Study",
+            "marks": 30,
+            "weighting_percent": null,
+            "objectives": [
+              "AO1",
+              "AO3"
+            ],
+            "rules": [
+              "Maximum of 6 sources",
+              "Q1(a)-Q1(e)"
+            ]
+          },
+          {
+            "paper": "2174/02",
+            "section": "B",
+            "name": "Essay Questions",
+            "marks": 20,
+            "weighting_percent": null,
+            "objectives": [
+              "AO1",
+              "AO2"
+            ],
+            "rules": [
+              "Answer 2 out of 3 questions",
+              "Each question carries 10 marks"
+            ]
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "p1_colonial_sea",
+            "paper": "2174/01",
+            "unit": "Extension of European control in Southeast Asia",
+            "topic": "Extension of European control in Southeast Asia",
+            "subtopics": [
+              "British Malaya",
+              "Dutch Indonesia",
+              "French Vietnam"
+            ],
+            "key_concepts": [],
+            "is_source_based_eligible": true,
+            "source_page": 7
+          },
+          {
+            "topic_id": "p1_versailles",
+            "paper": "2174/01",
+            "unit": "After World War I",
+            "topic": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+            "subtopics": [
+              "Treaty of Versailles",
+              "War Guilt Clause",
+              "reparations"
+            ],
+            "key_concepts": [],
+            "is_source_based_eligible": false,
+            "source_page": 13
+          },
+          {
+            "topic_id": "p1_nazi_germany",
+            "paper": "2174/01",
+            "unit": "Rise of Authoritarian Regimes",
+            "topic": "Case Study of Nazi Germany",
+            "subtopics": [
+              "rise of Hitler",
+              "consolidation of Nazi rule"
+            ],
+            "key_concepts": [],
+            "is_source_based_eligible": true,
+            "source_page": 13
+          },
+          {
+            "topic_id": "p1_wwii_europe",
+            "paper": "2174/01",
+            "unit": "War in Europe and the Asia-Pacific",
+            "topic": "Key developments leading to the outbreak of World War II in Europe",
+            "subtopics": [
+              "appeasement",
+              "Munich Agreement",
+              "Germany's aggressive foreign policy"
+            ],
+            "key_concepts": [
+              "Appeasement",
+              "Expansionism",
+              "Alliances"
+            ],
+            "is_source_based_eligible": true,
+            "source_page": 14
+          },
+          {
+            "topic_id": "p1_wwii_asia_pacific",
+            "paper": "2174/01",
+            "unit": "War in Europe and the Asia-Pacific",
+            "topic": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+            "subtopics": [
+              "US-Japan relations",
+              "Japan's expansionist foreign policy",
+              "Pearl Harbour"
+            ],
+            "key_concepts": [
+              "Theatres of war",
+              "Expansionism",
+              "Militarism"
+            ],
+            "is_source_based_eligible": false,
+            "source_page": 14
+          },
+          {
+            "topic_id": "p2_malayan_emergency",
+            "paper": "2174/02",
+            "unit": "Decolonisation in Southeast Asia",
+            "topic": "Why did the Communist insurgency in Malaya fail?",
+            "subtopics": [
+              "Malayan Emergency",
+              "Briggs Plan",
+              "Baling Peace Talks",
+              "British counter-insurgency"
+            ],
+            "key_concepts": [
+              "Decolonisation",
+              "Insurgency",
+              "Counter-insurgency"
+            ],
+            "is_source_based_eligible": true,
+            "source_page": 18
+          },
+          {
+            "topic_id": "p2_cold_war_origins",
+            "paper": "2174/02",
+            "unit": "The Cold War",
+            "topic": "Origins and development of the Cold War in Europe",
+            "subtopics": [
+              "Soviet expansion",
+              "containment",
+              "division of Germany"
+            ],
+            "key_concepts": [
+              "Ideological conflict",
+              "Superpower rivalry"
+            ],
+            "is_source_based_eligible": false,
+            "source_page": 17
+          },
+          {
+            "topic_id": "p2_korean_war",
+            "paper": "2174/02",
+            "unit": "The Cold War",
+            "topic": "The Korean War and the role of the United Nations",
+            "subtopics": [
+              "United Nations intervention",
+              "China",
+              "Korea"
+            ],
+            "key_concepts": [
+              "Containment",
+              "Collective security"
+            ],
+            "is_source_based_eligible": false,
+            "source_page": 17
+          },
+          {
+            "topic_id": "p2_vietnam_war",
+            "paper": "2174/02",
+            "unit": "The Cold War",
+            "topic": "The Vietnam War and its impact on the Cold War",
+            "subtopics": [
+              "USA",
+              "Vietnam",
+              "communism in Southeast Asia"
+            ],
+            "key_concepts": [
+              "Proxy war",
+              "Containment"
+            ],
+            "is_source_based_eligible": false,
+            "source_page": 17
+          },
+          {
+            "topic_id": "p2_end_cold_war",
+            "paper": "2174/02",
+            "unit": "The Cold War",
+            "topic": "The collapse of Soviet control over Eastern Europe",
+            "subtopics": [
+              "Gorbachev",
+              "Eastern Europe",
+              "end of the Cold War"
+            ],
+            "key_concepts": [
+              "Reform",
+              "Collapse of communism"
+            ],
+            "is_source_based_eligible": false,
+            "source_page": 17
+          }
+        ]
+      },
+      "exam_paper": {
+        "issues": [],
+        "subject": "History",
+        "paper_code": "2174/01",
+        "paper_title": "Paper 1 Extension of European control in Southeast Asia and challenges to European dominance, 1870s–1942",
+        "exam_year": 2024,
+        "duration_minutes": 110,
+        "total_marks": 50,
+        "raw_pdf_path": "data/raw/exam_pdfs/2174_specimen_paper_1.pdf",
+        "markdown_path": "/Users/YLChua/Desktop/govtech/section-2-case-study/data/processed/markdown/c1aaf24be796/exam.md",
+        "sources": [
+          {
+            "source_id": "A",
+            "source_type": "speech",
+            "text": "I am grateful to Mr Chamberlain for his efforts. I assure him that the German people wish only for\npeace.\nThe Sudetenland is the last problem that must be solved – and it will be solved. It is the last territorial\nclaim which I have to make in Europe. The aims of our foreign policy are not unlimited. They are\nbased only on a determination to save the German people. In 1919 ten million Germans found\nthemselves beyond the frontiers of Germany. Life has been a nightmare for them. Of all the groups\nof Germans in Europe, those in Czechoslovakia have the highest mortality rate, their child poverty\nrate is the highest, their unemployment is by far the highest.\nFor twenty years, the Germans in Czechoslovakia and in Germany had to sit back and watch\nbecause Germany was defenceless and could not protect itself in the new ‘democratic’ world.",
+            "image_path": null,
+            "attribution": "A speech made by Hitler, addressing the German Reichstag, on 26 September 1938.",
+            "date": null,
+            "page_number": 3
+          },
+          {
+            "source_id": "B",
+            "source_type": "letter",
+            "text": "on 15 October 1938. Rothermere was a supporter of Chamberlain.\nChamberlain is Prime Minister and the leader of the Party to which you too belong. Any member of\nhis Party who criticises runs the risk of making themselves very unpopular with the people of the\ncountry.\nThe British public is so terrified of being bombed that they will support anyone who keeps them out\nof war. I always knew the public had no desire to stand up to the Dictators and I always knew that\nwhen it came to choosing between peace or war ninety-five per cent of the electors would rally to the\npeace policy, however humiliating such a policy might be.\nI do hope you will become less critical of the government’s policy. If you became so unpopular that\nyou lost your seat and were no longer in Parliament, it would be a loss to the nation.",
+            "image_path": null,
+            "attribution": "A letter from Lord Rothermere, owner of several British newspapers, to Winston Churchill",
+            "date": null,
+            "page_number": 3
+          },
+          {
+            "source_id": "C",
+            "source_type": "text",
+            "text": "1938.\nBefore giving a verdict upon the Munich agreement, we should do well to avoid describing it as a\npersonal or a national triumph for anyone. The real triumph is that it has shown that representatives\nof four Great Powers can find it possible to agree on a way of carrying out a difficult and delicate\noperation by discussion instead of by force of arms. By doing this, they have averted a catastrophe\nwhich would have ended civilisation as we have known it.\nWe are relieved at our escape from this great peril of war. There is also a deep feeling of sympathy\nfor the Czechs, a small and gallant nation, in the hour of their national grief and loss. But I have done\nnothing to be ashamed of.",
+            "image_path": null,
+            "attribution": "Neville Chamberlain, British Prime Minister, speaking in the British Parliament, 3 October",
+            "date": null,
+            "page_number": 4
+          },
+          {
+            "source_id": "D",
+            "source_type": "text",
+            "text": "party in Britain, November 1938.\nMr Chamberlain has continually referred to Hitler’s assurance that he has no further territorial claims\nin Europe. But Hitler has made such claims on innumerable occasions. All such assurances are\nutterly worthless. If frontiers are changed whenever the Nazi Party, by propaganda and threat of war,\nhas caused disturbance in another country, there is not a state in Europe that is secure. In order to\ncollapse, the Czechs did not need the friendship of the Western Powers. This friendship could only\nhave any meaning if it were aimed at preserving the integrity of Czechoslovakia and curbing Nazi\nexpansionism. ‘It sounds like a mockery,’ wrote a Czech newspaper, ‘when the British Prime Minister\ndeclares that Czechoslovakia was saved from disaster. It is as though one should say after cutting\noff a man’s arms and legs that he has been saved from death. This sort of logic is incomprehensible.’",
+            "image_path": null,
+            "attribution": "A pamphlet titled ‘The full facts of the Czech crisis’ produced by the leading opposition",
+            "date": null,
+            "page_number": 4
+          },
+          {
+            "source_id": "E",
+            "source_type": "cartoon",
+            "text": "saying, ‘All Germans everywhere are mine’.\n NIGHTMARE WAITING LIST",
+            "image_path": null,
+            "attribution": "A cartoon published in a British newspaper, 9 September 1938. Hitler is holding a banner",
+            "date": null,
+            "page_number": 4
+          },
+          {
+            "source_id": "F",
+            "source_type": "text",
+            "text": "The USA did not approve of Chamberlain’s policies. American diplomats and politicians worked\ntirelessly to make Britain realise that as long as it continued to believe in the possibility of dealing\nhonestly and realistically with Hitler, it would not succeed in its desire to stop Hitler’s policy of\nexpanding German territory.\nInstead, the USA tried to persuade Britain to replace its policy towards Germany with an aggressive\none, based on deterrence. This changed policy would need to show the desire to use the military\nforces Britain possessed (despite the fact that Britain had only two divisions to send to the European\nmainland in August 1938). Only then would the Nazis understand that they would not get away with\nthreatening Czechoslovakia and other countries, just as they had threatened Austria.",
+            "image_path": null,
+            "attribution": "An online article written in a History journal in 2021.",
+            "date": null,
+            "page_number": 5
+          }
+        ],
+        "questions": [
+          {
+            "question_id": "1(a)",
+            "section": "A",
+            "prompt": "Study Source A. How useful is this source as evidence of Hitler’s foreign policy ambitions? Explain your answer.",
+            "marks": 6,
+            "required_sources": [
+              "A"
+            ],
+            "choice_group": null,
+            "page_number": 2
+          },
+          {
+            "question_id": "1(b)",
+            "section": "A",
+            "prompt": "Study Source B. Why do you think Rothermere wrote this letter? Explain your answer.",
+            "marks": 5,
+            "required_sources": [
+              "B"
+            ],
+            "choice_group": null,
+            "page_number": 2
+          },
+          {
+            "question_id": "1(c)",
+            "section": "A",
+            "prompt": "Study Sources C and D. How far does Source D prove that Source C was wrong? Explain your answer.",
+            "marks": 6,
+            "required_sources": [
+              "C",
+              "D",
+              "C"
+            ],
+            "choice_group": null,
+            "page_number": 2
+          },
+          {
+            "question_id": "1(d)",
+            "section": "A",
+            "prompt": "Study Source E. Do you think the cartoonist would have agreed with Chamberlain’s policy of appeasement? Explain your answer.",
+            "marks": 5,
+            "required_sources": [
+              "E"
+            ],
+            "choice_group": null,
+            "page_number": 2
+          },
+          {
+            "question_id": "1(e)",
+            "section": "A",
+            "prompt": "Study all the sources. ‘Chamberlain was right to follow a policy of appeasement.’ How far do these sources support this view? Use the sources and your knowledge to explain your answer.",
+            "marks": 8,
+            "required_sources": [],
+            "choice_group": null,
+            "page_number": 2
+          },
+          {
+            "question_id": "2(a)",
+            "section": "B",
+            "prompt": "‘The main reason for the Dutch colonisation of Indonesia from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+            "marks": 10,
+            "required_sources": [],
+            "choice_group": "2_either_or",
+            "page_number": 6
+          },
+          {
+            "question_id": "2(b)",
+            "section": "B",
+            "prompt": "‘The main reason for the French colonisation of Vietnam from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+            "marks": 10,
+            "required_sources": [],
+            "choice_group": "2_either_or",
+            "page_number": 6
+          },
+          {
+            "question_id": "3",
+            "section": "B",
+            "prompt": "‘Germans hated the Treaty of Versailles because it blamed them for starting World War I.’ How far do you agree with this statement? Explain your answer.",
+            "marks": 10,
+            "required_sources": [],
+            "choice_group": null,
+            "page_number": 6
+          },
+          {
+            "question_id": "4",
+            "section": "B",
+            "prompt": "‘US policy towards Japan in the 1930s was responsible for the outbreak of World War II in the Asia-Pacific.’ How far do you agree with this statement? Explain your answer.",
+            "marks": 10,
+            "required_sources": [],
+            "choice_group": null,
+            "page_number": 6
+          }
+        ]
+      },
+      "rule_checks": [
+        {
+          "rule_id": "history_launcher_subject",
+          "expected": "History",
+          "observed": "History",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "supported_paper_code",
+          "expected": "2174/01 or 2174/02",
+          "observed": "2174/01",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "total_candidate_marks",
+          "expected": "50 candidate marks",
+          "observed": "50",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "section_a_marks",
+          "expected": "30",
+          "observed": "30",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "section_b_candidate_marks",
+          "expected": "20",
+          "observed": "20",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "section_b_offered_questions",
+          "expected": "At least 3 offered essay prompts",
+          "observed": "4",
+          "passed": true,
+          "severity_if_failed": "WARNING"
+        },
+        {
+          "rule_id": "source_count_max",
+          "expected": "<= 6",
+          "observed": "6",
+          "passed": true,
+          "severity_if_failed": "WARNING"
+        },
+        {
+          "rule_id": "has_1(a)",
+          "expected": "present",
+          "observed": "present",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "has_1(b)",
+          "expected": "present",
+          "observed": "present",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "has_1(c)",
+          "expected": "present",
+          "observed": "present",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "has_1(d)",
+          "expected": "present",
+          "observed": "present",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "has_1(e)",
+          "expected": "present",
+          "observed": "present",
+          "passed": true,
+          "severity_if_failed": "ERROR"
+        },
+        {
+          "rule_id": "section_b_offered_marks",
+          "expected": "30 offered marks, 20 candidate marks",
+          "observed": "30",
+          "passed": true,
+          "severity_if_failed": "WARNING"
+        }
+      ],
+      "annotations": [
+        {
+          "question_id": "1(a)",
+          "predicted_objectives": [
+            "AO1",
+            "AO3"
+          ],
+          "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+          "syllabus_topic_id": "p1_wwii_europe",
+          "evidence_from_question": "Study Source A. How useful is this source as evidence of Hitler’s foreign policy ambitions? Explain your answer.",
+          "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+          "evidence_page_numbers": [
+            2,
+            3
+          ],
+          "ambiguity_notes": []
+        },
+        {
+          "question_id": "1(b)",
+          "predicted_objectives": [
+            "AO1",
+            "AO3"
+          ],
+          "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+          "syllabus_topic_id": "p1_wwii_europe",
+          "evidence_from_question": "Study Source B. Why do you think Rothermere wrote this letter? Explain your answer.",
+          "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+          "evidence_page_numbers": [
+            2,
+            3
+          ],
+          "ambiguity_notes": []
+        },
+        {
+          "question_id": "1(c)",
+          "predicted_objectives": [
+            "AO1",
+            "AO3"
+          ],
+          "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+          "syllabus_topic_id": "p1_wwii_europe",
+          "evidence_from_question": "Study Sources C and D. How far does Source D prove that Source C was wrong? Explain your answer.",
+          "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+          "evidence_page_numbers": [
+            2,
+            4
+          ],
+          "ambiguity_notes": []
+        },
+        {
+          "question_id": "1(d)",
+          "predicted_objectives": [
+            "AO1",
+            "AO3"
+          ],
+          "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+          "syllabus_topic_id": "p1_wwii_europe",
+          "evidence_from_question": "Study Source E. Do you think the cartoonist would have agreed with Chamberlain’s policy of appeasement? Explain your answer.",
+          "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+          "evidence_page_numbers": [
+            2,
+            4
+          ],
+          "ambiguity_notes": []
+        },
+        {
+          "question_id": "1(e)",
+          "predicted_objectives": [
+            "AO1",
+            "AO3"
+          ],
+          "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+          "syllabus_topic_id": "p1_wwii_europe",
+          "evidence_from_question": "Study all the sources. ‘Chamberlain was right to follow a policy of appeasement.’ How far do these sources support this view? Use the sources and your knowledge to explain your answer.",
+          "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+          "evidence_page_numbers": [
+            2
+          ],
+          "ambiguity_notes": []
+        },
+        {
+          "question_id": "2(a)",
+          "predicted_objectives": [
+            "AO1",
+            "AO2"
+          ],
+          "predicted_topic": "Extension of European control in Southeast Asia",
+          "syllabus_topic_id": "p1_colonial_sea",
+          "evidence_from_question": "‘The main reason for the Dutch colonisation of Indonesia from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+          "evidence_from_syllabus": "Extension of European control in Southeast Asia",
+          "evidence_page_numbers": [
+            6
+          ],
+          "ambiguity_notes": []
+        },
+        {
+          "question_id": "2(b)",
+          "predicted_objectives": [
+            "AO1",
+            "AO2"
+          ],
+          "predicted_topic": "Extension of European control in Southeast Asia",
+          "syllabus_topic_id": "p1_colonial_sea",
+          "evidence_from_question": "‘The main reason for the French colonisation of Vietnam from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+          "evidence_from_syllabus": "Extension of European control in Southeast Asia",
+          "evidence_page_numbers": [
+            6
+          ],
+          "ambiguity_notes": []
+        },
+        {
+          "question_id": "3",
+          "predicted_objectives": [
+            "AO1",
+            "AO2"
+          ],
+          "predicted_topic": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+          "syllabus_topic_id": "p1_versailles",
+          "evidence_from_question": "‘Germans hated the Treaty of Versailles because it blamed them for starting World War I.’ How far do you agree with this statement? Explain your answer.",
+          "evidence_from_syllabus": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+          "evidence_page_numbers": [
+            6
+          ],
+          "ambiguity_notes": []
+        },
+        {
+          "question_id": "4",
+          "predicted_objectives": [
+            "AO1",
+            "AO2"
+          ],
+          "predicted_topic": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+          "syllabus_topic_id": "p1_wwii_asia_pacific",
+          "evidence_from_question": "‘US policy towards Japan in the 1930s was responsible for the outbreak of World War II in the Asia-Pacific.’ How far do you agree with this statement? Explain your answer.",
+          "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+          "evidence_page_numbers": [
+            6
+          ],
+          "ambiguity_notes": []
+        }
+      ],
+      "topic_weightage": [
+        {
+          "topic": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+          "required_marks": 0,
+          "offered_marks": 10,
+          "candidate_experienced_notes": "Section A is compulsory; Section B is offered as choices, so not all offered marks are experienced by one candidate."
+        },
+        {
+          "topic": "Extension of European control in Southeast Asia",
+          "required_marks": 0,
+          "offered_marks": 10,
+          "candidate_experienced_notes": "Section A is compulsory; Section B is offered as choices, so not all offered marks are experienced by one candidate."
+        },
+        {
+          "topic": "Key developments leading to the outbreak of World War II in Europe",
+          "required_marks": 30,
+          "offered_marks": 30,
+          "candidate_experienced_notes": "Section A is compulsory; Section B is offered as choices, so not all offered marks are experienced by one candidate."
+        },
+        {
+          "topic": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+          "required_marks": 0,
+          "offered_marks": 10,
+          "candidate_experienced_notes": "Section A is compulsory; Section B is offered as choices, so not all offered marks are experienced by one candidate."
+        }
+      ],
+      "structure_metrics": [
+        {
+          "label": "Subject",
+          "value": "History"
+        },
+        {
+          "label": "Total candidate marks",
+          "value": 50
+        },
+        {
+          "label": "Section A marks",
+          "value": 30
+        },
+        {
+          "label": "Section B candidate marks",
+          "value": 20
+        },
+        {
+          "label": "Section B offered marks",
+          "value": 30
+        },
+        {
+          "label": "Section B offered questions",
+          "value": 4
+        },
+        {
+          "label": "Source count",
+          "value": 6
+        }
+      ],
+      "download_filename_base": "history-alignment-c1aaf24be796",
+      "summary_findings": [
+        "2174/01 is compared against the 2026 History syllabus baseline.",
+        "Question and source page numbers are retained for traceability.",
+        "History route applies source-based and essay-choice rules for Paper 1/Paper 2."
+      ],
+      "chart_payloads": {
+        "marks_by_section": [
+          {
+            "section": "A",
+            "marks": 30
+          },
+          {
+            "section": "B",
+            "marks": 40
+          }
+        ],
+        "topic_weightage": [
+          {
+            "topic": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+            "required_marks": 0,
+            "offered_marks": 10,
+            "candidate_experienced_notes": "Section A is compulsory; Section B is offered as choices, so not all offered marks are experienced by one candidate."
+          },
+          {
+            "topic": "Extension of European control in Southeast Asia",
+            "required_marks": 0,
+            "offered_marks": 10,
+            "candidate_experienced_notes": "Section A is compulsory; Section B is offered as choices, so not all offered marks are experienced by one candidate."
+          },
+          {
+            "topic": "Key developments leading to the outbreak of World War II in Europe",
+            "required_marks": 30,
+            "offered_marks": 30,
+            "candidate_experienced_notes": "Section A is compulsory; Section B is offered as choices, so not all offered marks are experienced by one candidate."
+          },
+          {
+            "topic": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+            "required_marks": 0,
+            "offered_marks": 10,
+            "candidate_experienced_notes": "Section A is compulsory; Section B is offered as choices, so not all offered marks are experienced by one candidate."
+          }
+        ],
+        "objective_heatmap": [
+          {
+            "question_id": "1(a)",
+            "predicted_objectives": [
+              "AO1",
+              "AO3"
+            ],
+            "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+            "syllabus_topic_id": "p1_wwii_europe",
+            "evidence_from_question": "Study Source A. How useful is this source as evidence of Hitler’s foreign policy ambitions? Explain your answer.",
+            "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+            "evidence_page_numbers": [
+              2,
+              3
+            ],
+            "ambiguity_notes": []
+          },
+          {
+            "question_id": "1(b)",
+            "predicted_objectives": [
+              "AO1",
+              "AO3"
+            ],
+            "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+            "syllabus_topic_id": "p1_wwii_europe",
+            "evidence_from_question": "Study Source B. Why do you think Rothermere wrote this letter? Explain your answer.",
+            "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+            "evidence_page_numbers": [
+              2,
+              3
+            ],
+            "ambiguity_notes": []
+          },
+          {
+            "question_id": "1(c)",
+            "predicted_objectives": [
+              "AO1",
+              "AO3"
+            ],
+            "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+            "syllabus_topic_id": "p1_wwii_europe",
+            "evidence_from_question": "Study Sources C and D. How far does Source D prove that Source C was wrong? Explain your answer.",
+            "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+            "evidence_page_numbers": [
+              2,
+              4
+            ],
+            "ambiguity_notes": []
+          },
+          {
+            "question_id": "1(d)",
+            "predicted_objectives": [
+              "AO1",
+              "AO3"
+            ],
+            "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+            "syllabus_topic_id": "p1_wwii_europe",
+            "evidence_from_question": "Study Source E. Do you think the cartoonist would have agreed with Chamberlain’s policy of appeasement? Explain your answer.",
+            "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+            "evidence_page_numbers": [
+              2,
+              4
+            ],
+            "ambiguity_notes": []
+          },
+          {
+            "question_id": "1(e)",
+            "predicted_objectives": [
+              "AO1",
+              "AO3"
+            ],
+            "predicted_topic": "Key developments leading to the outbreak of World War II in Europe",
+            "syllabus_topic_id": "p1_wwii_europe",
+            "evidence_from_question": "Study all the sources. ‘Chamberlain was right to follow a policy of appeasement.’ How far do these sources support this view? Use the sources and your knowledge to explain your answer.",
+            "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in Europe",
+            "evidence_page_numbers": [
+              2
+            ],
+            "ambiguity_notes": []
+          },
+          {
+            "question_id": "2(a)",
+            "predicted_objectives": [
+              "AO1",
+              "AO2"
+            ],
+            "predicted_topic": "Extension of European control in Southeast Asia",
+            "syllabus_topic_id": "p1_colonial_sea",
+            "evidence_from_question": "‘The main reason for the Dutch colonisation of Indonesia from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+            "evidence_from_syllabus": "Extension of European control in Southeast Asia",
+            "evidence_page_numbers": [
+              6
+            ],
+            "ambiguity_notes": []
+          },
+          {
+            "question_id": "2(b)",
+            "predicted_objectives": [
+              "AO1",
+              "AO2"
+            ],
+            "predicted_topic": "Extension of European control in Southeast Asia",
+            "syllabus_topic_id": "p1_colonial_sea",
+            "evidence_from_question": "‘The main reason for the French colonisation of Vietnam from the 1870s was to obtain raw materials.’ How far do you agree with this statement? Explain your answer.",
+            "evidence_from_syllabus": "Extension of European control in Southeast Asia",
+            "evidence_page_numbers": [
+              6
+            ],
+            "ambiguity_notes": []
+          },
+          {
+            "question_id": "3",
+            "predicted_objectives": [
+              "AO1",
+              "AO2"
+            ],
+            "predicted_topic": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+            "syllabus_topic_id": "p1_versailles",
+            "evidence_from_question": "‘Germans hated the Treaty of Versailles because it blamed them for starting World War I.’ How far do you agree with this statement? Explain your answer.",
+            "evidence_from_syllabus": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+            "evidence_page_numbers": [
+              6
+            ],
+            "ambiguity_notes": []
+          },
+          {
+            "question_id": "4",
+            "predicted_objectives": [
+              "AO1",
+              "AO2"
+            ],
+            "predicted_topic": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+            "syllabus_topic_id": "p1_wwii_asia_pacific",
+            "evidence_from_question": "‘US policy towards Japan in the 1930s was responsible for the outbreak of World War II in the Asia-Pacific.’ How far do you agree with this statement? Explain your answer.",
+            "evidence_from_syllabus": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+            "evidence_page_numbers": [
+              6
+            ],
+            "ambiguity_notes": []
+          }
+        ]
+      }
+    }
+  },
+  "reference": {
+    "paper_code": "2174/01",
+    "total_marks": 50,
+    "section_a_marks": 30,
+    "section_b_candidate_marks": 20,
+    "question_count": 9,
+    "source_count": 6,
+    "topics": {
+      "1(a)": "Key developments leading to the outbreak of World War II in Europe",
+      "1(b)": "Key developments leading to the outbreak of World War II in Europe",
+      "1(c)": "Key developments leading to the outbreak of World War II in Europe",
+      "1(d)": "Key developments leading to the outbreak of World War II in Europe",
+      "1(e)": "Key developments leading to the outbreak of World War II in Europe",
+      "2(a)": "Extension of European control in Southeast Asia",
+      "2(b)": "Extension of European control in Southeast Asia",
+      "3": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+      "4": "Key developments leading to the outbreak of World War II in the Asia-Pacific"
+    },
+    "objectives": {
+      "1(a)": [
+        "AO1",
+        "AO3"
+      ],
+      "1(b)": [
+        "AO1",
+        "AO3"
+      ],
+      "1(c)": [
+        "AO1",
+        "AO3"
+      ],
+      "1(d)": [
+        "AO1",
+        "AO3"
+      ],
+      "1(e)": [
+        "AO1",
+        "AO3"
+      ],
+      "2(a)": [
+        "AO1",
+        "AO2"
+      ],
+      "2(b)": [
+        "AO1",
+        "AO2"
+      ],
+      "3": [
+        "AO1",
+        "AO2"
+      ],
+      "4": [
+        "AO1",
+        "AO2"
+      ]
+    },
+    "topic_weightage": {
+      "Key developments leading to the outbreak of World War II in Europe": {
+        "required_marks": 30,
+        "offered_marks": 30
+      },
+      "Extension of European control in Southeast Asia": {
+        "required_marks": 0,
+        "offered_marks": 10
+      },
+      "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s": {
+        "required_marks": 0,
+        "offered_marks": 10
+      },
+      "Key developments leading to the outbreak of World War II in the Asia-Pacific": {
+        "required_marks": 0,
+        "offered_marks": 10
+      }
+    }
+  },
+  "results": {
+    "summary": {
+      "keys_evaluated": 28,
+      "accuracy_exact_match_rate": 1.0,
+      "accuracy_avg_textual_similarity": 1.0,
+      "completeness_rate": 1.0,
+      "hallucination_rate": 0.0,
+      "failed_keys": [],
+      "hallucinated_keys": []
+    },
+    "per_key": [
+      {
+        "key": "objectives.1(a)",
+        "predicted": [
+          "AO1",
+          "AO3"
+        ],
+        "expected": [
+          "AO1",
+          "AO3"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "objectives.1(b)",
+        "predicted": [
+          "AO1",
+          "AO3"
+        ],
+        "expected": [
+          "AO1",
+          "AO3"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "objectives.1(c)",
+        "predicted": [
+          "AO1",
+          "AO3"
+        ],
+        "expected": [
+          "AO1",
+          "AO3"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "objectives.1(d)",
+        "predicted": [
+          "AO1",
+          "AO3"
+        ],
+        "expected": [
+          "AO1",
+          "AO3"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "objectives.1(e)",
+        "predicted": [
+          "AO1",
+          "AO3"
+        ],
+        "expected": [
+          "AO1",
+          "AO3"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "objectives.2(a)",
+        "predicted": [
+          "AO1",
+          "AO2"
+        ],
+        "expected": [
+          "AO1",
+          "AO2"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "objectives.2(b)",
+        "predicted": [
+          "AO1",
+          "AO2"
+        ],
+        "expected": [
+          "AO1",
+          "AO2"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "objectives.3",
+        "predicted": [
+          "AO1",
+          "AO2"
+        ],
+        "expected": [
+          "AO1",
+          "AO2"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "objectives.4",
+        "predicted": [
+          "AO1",
+          "AO2"
+        ],
+        "expected": [
+          "AO1",
+          "AO2"
+        ],
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "paper_code",
+        "predicted": "2174/01",
+        "expected": "2174/01",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "question_count",
+        "predicted": 9,
+        "expected": 9,
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "section_a_marks",
+        "predicted": 30,
+        "expected": 30,
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "section_b_candidate_marks",
+        "predicted": 20,
+        "expected": 20,
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "source_count",
+        "predicted": 6,
+        "expected": 6,
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topic_weightage.Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+        "predicted": {
+          "required_marks": 0,
+          "offered_marks": 10
+        },
+        "expected": {
+          "required_marks": 0,
+          "offered_marks": 10
+        },
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topic_weightage.Extension of European control in Southeast Asia",
+        "predicted": {
+          "required_marks": 0,
+          "offered_marks": 10
+        },
+        "expected": {
+          "required_marks": 0,
+          "offered_marks": 10
+        },
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topic_weightage.Key developments leading to the outbreak of World War II in Europe",
+        "predicted": {
+          "required_marks": 30,
+          "offered_marks": 30
+        },
+        "expected": {
+          "required_marks": 30,
+          "offered_marks": 30
+        },
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topic_weightage.Key developments leading to the outbreak of World War II in the Asia-Pacific",
+        "predicted": {
+          "required_marks": 0,
+          "offered_marks": 10
+        },
+        "expected": {
+          "required_marks": 0,
+          "offered_marks": 10
+        },
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.1(a)",
+        "predicted": "Key developments leading to the outbreak of World War II in Europe",
+        "expected": "Key developments leading to the outbreak of World War II in Europe",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.1(b)",
+        "predicted": "Key developments leading to the outbreak of World War II in Europe",
+        "expected": "Key developments leading to the outbreak of World War II in Europe",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.1(c)",
+        "predicted": "Key developments leading to the outbreak of World War II in Europe",
+        "expected": "Key developments leading to the outbreak of World War II in Europe",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.1(d)",
+        "predicted": "Key developments leading to the outbreak of World War II in Europe",
+        "expected": "Key developments leading to the outbreak of World War II in Europe",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.1(e)",
+        "predicted": "Key developments leading to the outbreak of World War II in Europe",
+        "expected": "Key developments leading to the outbreak of World War II in Europe",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.2(a)",
+        "predicted": "Extension of European control in Southeast Asia",
+        "expected": "Extension of European control in Southeast Asia",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.2(b)",
+        "predicted": "Extension of European control in Southeast Asia",
+        "expected": "Extension of European control in Southeast Asia",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.3",
+        "predicted": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+        "expected": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "topics.4",
+        "predicted": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+        "expected": "Key developments leading to the outbreak of World War II in the Asia-Pacific",
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      },
+      {
+        "key": "total_marks",
+        "predicted": 50,
+        "expected": 50,
+        "accuracy": {
+          "exact_match": true,
+          "textual_similarity": 1.0
+        },
+        "completeness": {
+          "required": true,
+          "present": true,
+          "failed_to_obtain": false
+        },
+        "hallucination": {
+          "supported_by_paper": true,
+          "hallucinated": false
+        }
+      }
+    ]
+  }
+}

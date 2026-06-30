@@ -1,0 +1,13 @@
+{
+  "mature_2025_transactions": 10485,
+  "non_mature_2025_transactions": 14600,
+  "mature_2025_median_price": 674888.0,
+  "non_mature_2025_median_price": 610000.0,
+  "mature_price_premium_pct": 10.63737704918033,
+  "mature_2017_rate": 0.7316399779127554,
+  "mature_2025_rate": 0.7467334287076777,
+  "mature_change_pp": 1.5093450794922303,
+  "non_mature_2017_rate": 0.7819102496944299,
+  "non_mature_2025_rate": 0.8244520547945206,
+  "non_mature_change_pp": 4.254180510009064
+}

@@ -1,0 +1,3 @@
+[submodule "section-2-case-study/data/r-resources"]
+	path = section-2-case-study/data/r-resources
+	url = https://github.com/aipracticegovsg/r-resources.git

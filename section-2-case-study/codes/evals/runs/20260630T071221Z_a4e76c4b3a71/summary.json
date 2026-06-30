@@ -1,0 +1,33 @@
+{
+  "keys_evaluated": 28,
+  "accuracy_exact_match_rate": 0.2143,
+  "accuracy_avg_textual_similarity": 0.2618,
+  "completeness_rate": 0.5357,
+  "hallucination_rate": 0.3214,
+  "failed_keys": [
+    "objectives.1(a)",
+    "objectives.1(b)",
+    "objectives.1(c)",
+    "objectives.1(d)",
+    "objectives.1(e)",
+    "objectives.2(a)",
+    "objectives.2(b)",
+    "objectives.3",
+    "objectives.4",
+    "topic_weightage.Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+    "topic_weightage.Extension of European control in Southeast Asia",
+    "topic_weightage.Key developments leading to the outbreak of World War II in Europe",
+    "topic_weightage.Key developments leading to the outbreak of World War II in the Asia-Pacific"
+  ],
+  "hallucinated_keys": [
+    "topics.1(a)",
+    "topics.1(b)",
+    "topics.1(c)",
+    "topics.1(d)",
+    "topics.1(e)",
+    "topics.2(a)",
+    "topics.2(b)",
+    "topics.3",
+    "topics.4"
+  ]
+}

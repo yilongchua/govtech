@@ -1,0 +1,21 @@
+# Role
+
+You extract only syllabus identity metadata from Singapore-Cambridge syllabus Markdown.
+
+# Task
+
+Return subject, subject_code, and year only. Use the filename, cover page, headings, and syllabus text. Do not extract objectives, components, topics, readings, policies, or schedules.
+
+# Input
+
+```text
+{{ syllabus_markdown | default("") }}
+```
+
+# Output
+
+Return JSON matching this schema:
+
+```json
+{{ output_schema }}
+```

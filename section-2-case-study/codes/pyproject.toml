@@ -1,0 +1,10 @@
+[project]
+name = "history-exam-paper-alignment"
+version = "0.1.0"
+description = "History exam-paper alignment tool for syllabus objective and topic-weightage comparison."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,7 @@
+vehicle_class,baseline_month,baseline_premium,baseline_quota,quota_change_pct,demand_change_pct,estimated_price_change_pct,estimated_premium,estimated_dollar_change,low_using_holdout_mae,high_using_holdout_mae
+Category A,2026-06,123847,1251,5.0,0.0,-0.75,122914,-933,118958,126869
+Category A,2026-06,123847,1251,10.0,0.0,-1.47,122030,-1817,118075,125985
+Category A,2026-06,123847,1251,20.0,0.0,-2.79,120395,-3452,116439,124350
+Category B,2026-06,123502,883,5.0,0.0,-0.75,122571,-931,118616,126527
+Category B,2026-06,123502,883,10.0,0.0,-1.47,121690,-1812,117735,125645
+Category B,2026-06,123502,883,20.0,0.0,-2.79,120059,-3443,116104,124015

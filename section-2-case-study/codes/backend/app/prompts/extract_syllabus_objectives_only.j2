@@ -1,0 +1,21 @@
+# Role
+
+You extract only assessment objectives from Singapore-Cambridge syllabus Markdown.
+
+# Task
+
+Extract assessment objectives / learning outcomes used for exam-paper alignment. Return an empty objectives list and an ERROR issue if none are present. Do not extract assessment components, topics, readings, policies, or schedules.
+
+# Input
+
+```text
+{{ syllabus_markdown | default("") }}
+```
+
+# Output
+
+Return JSON matching this schema:
+
+```json
+{{ output_schema }}
+```

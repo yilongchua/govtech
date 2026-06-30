@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./2174_y26_sy.pdf:/app/2174_y26_sy.pdf:ro
+      - ./2174_y26_sy.md:/app/2174_y26_sy.md:ro
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

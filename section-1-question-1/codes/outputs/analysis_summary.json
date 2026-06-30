@@ -1,0 +1,20 @@
+{
+  "data_month_start": "2017-01-01",
+  "data_month_end": "2026-06-01",
+  "latest_complete_year": 2025,
+  "baseline_2017_penetration": 0.7597152469647472,
+  "latest_complete_penetration": 0.7919673111421168,
+  "latest_complete_change_pp": 3.225206417736959,
+  "latest_complete_transactions": 25085,
+  "latest_complete_agent_sides": 39733,
+  "latest_complete_side_gap": 1618.0860597786304,
+  "cumulative_post_2018_gap_complete_years": -440.37149544104614,
+  "avg_penetration_2018_latest_complete": 0.7580282249091592,
+  "buyer_2017": 0.609098444585304,
+  "seller_2017": 0.9103320493441903,
+  "buyer_latest_complete": 0.6475583017739686,
+  "seller_latest_complete": 0.9363763205102651,
+  "total_cea_rows": 1341539,
+  "total_hdb_rows": 234068,
+  "filtered_cea_hdb_resale_agent_sides": 351812
+}

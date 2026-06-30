@@ -1,0 +1,36 @@
+{
+  "paper_code": "2174/01",
+  "total_marks": 50,
+  "section_a_marks": 30,
+  "section_b_candidate_marks": 20,
+  "question_count": 9,
+  "source_count": 6,
+  "topics": {
+    "1(a)": "Key developments leading to the outbreak of World War II in Europe",
+    "1(b)": "Key developments leading to the outbreak of World War II in Europe",
+    "1(c)": "Key developments leading to the outbreak of World War II in Europe",
+    "1(d)": "Key developments leading to the outbreak of World War II in Europe",
+    "1(e)": "Key developments leading to the outbreak of World War II in Europe",
+    "2(a)": "Extension of European control in Southeast Asia",
+    "2(b)": "Extension of European control in Southeast Asia",
+    "3": "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s",
+    "4": "Key developments leading to the outbreak of World War II in the Asia-Pacific"
+  },
+  "objectives": {
+    "1(a)": ["AO1", "AO3"],
+    "1(b)": ["AO1", "AO3"],
+    "1(c)": ["AO1", "AO3"],
+    "1(d)": ["AO1", "AO3"],
+    "1(e)": ["AO1", "AO3"],
+    "2(a)": ["AO1", "AO2"],
+    "2(b)": ["AO1", "AO2"],
+    "3": ["AO1", "AO2"],
+    "4": ["AO1", "AO2"]
+  },
+  "topic_weightage": {
+    "Key developments leading to the outbreak of World War II in Europe": {"required_marks": 30, "offered_marks": 30},
+    "Extension of European control in Southeast Asia": {"required_marks": 0, "offered_marks": 10},
+    "Aims and terms of the Paris Peace Conference and its immediate impact on Europe in the 1920s": {"required_marks": 0, "offered_marks": 10},
+    "Key developments leading to the outbreak of World War II in the Asia-Pacific": {"required_marks": 0, "offered_marks": 10}
+  }
+}

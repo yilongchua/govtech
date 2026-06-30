@@ -1,0 +1,259 @@
+{"kind":"deck","id":"pr/asktok","name":"Deck"}
+{"kind":"layout","layoutId":"7f6134fa-faf9-4a02-ad1d-d94706612e63","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"a0284892-031c-4311-84cc-d08bdca33d48","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/4v9s31","slide":1,"title":"Exam Paper Analytical Tool","textShapes":8}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":1,"text":"Exam Paper Analytical Tool","textPreview":"Exam Paper Analytical Tool","textChars":26,"textLines":1,"bbox":[58,74,690,140]}
+{"kind":"textbox","id":"sh/7u54zido","slide":1,"text":"Syllabus-objective alignment, topic weightage balance, evaluation, and generalisation strategy","textPreview":"Syllabus-objective alignment, topic weightage balance, evaluation, and generalisation strategy","textChars":94,"textLines":1,"bbox":[58,246,620,88]}
+{"kind":"shape","id":"sh/ed8bat47","slide":1,"bbox":[58,396,10,10]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":1,"text":"React frontend for batch paper upload, syllabus management, LLM settings, and report download","textPreview":"React frontend for batch paper upload, syllabus management, LLM settings, and report download","textChars":93,"textLines":1,"bbox":[82,390,586,56]}
+{"kind":"shape","id":"sh/wra5gbq1","slide":1,"bbox":[58,458,10,10]}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":1,"text":"FastAPI backend for PDF ingestion, route resolution, extraction, alignment, weightage, and report artefacts","textPreview":"FastAPI backend for PDF ingestion, route resolution, extraction, alignment, weightage, and report artefacts","textChars":107,"textLines":1,"bbox":[82,452,586,56]}
+{"kind":"shape","id":"sh/eloj2t83","slide":1,"bbox":[58,520,10,10]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":1,"text":"Evaluation harness separates extraction success from AI mapping quality","textPreview":"Evaluation harness separates extraction success from AI mapping quality","textChars":71,"textLines":1,"bbox":[82,514,586,56]}
+{"kind":"shape","id":"sh/6hcrmhk3","slide":1,"bbox":[750,540,430,60]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":1,"text":"Management briefing with technical implementation detail","textPreview":"Management briefing with technical implementation detail","textChars":56,"textLines":1,"bbox":[774,558,380,28]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":1,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"image","id":"im/p0bi9s36","slide":1,"name":"","alt":"Screenshot of the Exam Paper Alignment app","bbox":[750,158,430,276]}
+{"kind":"notes","id":"nt/4v9s31","slide":1,"text":""}
+{"kind":"slide","id":"sl/xbpbib","slide":2,"title":"CURRENT IMPLEMENTATION","textShapes":18}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":2,"text":"CURRENT IMPLEMENTATION","textPreview":"CURRENT IMPLEMENTATION","textChars":22,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":2,"text":"What Was Built","textPreview":"What Was Built","textChars":14,"textLines":1,"bbox":[58,70,900,58]}
+{"kind":"shape","id":"sh/p4r65wju","slide":2,"bbox":[58,138,1164,1]}
+{"kind":"shape","id":"sh/i5sneloj","slide":2,"bbox":[58,196,158,86]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":2,"text":"Step 1: Upload","textPreview":"Step 1: Upload","textChars":14,"textLines":1,"bbox":[66,226,146,30]}
+{"kind":"shape","id":"sh/0bi9s36h","slide":2,"bbox":[221,224,32,30]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":2,"text":"One or more exam PDFs enter through the React UI.","textPreview":"One or more exam PDFs enter through the React UI.","textChars":49,"textLines":1,"bbox":[58,328,158,112]}
+{"kind":"shape","id":"sh/itgfmlkj","slide":2,"bbox":[248,196,158,86]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":2,"text":"Step 2: Route","textPreview":"Step 2: Route","textChars":13,"textLines":1,"bbox":[256,226,146,30]}
+{"kind":"shape","id":"sh/r2p8nqxs","slide":2,"bbox":[411,224,32,30]}
+{"kind":"textbox","id":"sh/2hwfyxob","slide":2,"text":"First-page model scan resolves the configured syllabus route.","textPreview":"First-page model scan resolves the configured syllabus route.","textChars":61,"textLines":1,"bbox":[248,328,158,112]}
+{"kind":"shape","id":"sh/94fu18jq","slide":2,"bbox":[438,196,158,86]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":2,"text":"Step 3: Extract","textPreview":"Step 3: Extract","textChars":15,"textLines":1,"bbox":[446,226,146,30]}
+{"kind":"shape","id":"sh/ra5gbq1o","slide":2,"bbox":[601,224,32,30]}
+{"kind":"textbox","id":"sh/2p8nqxs7","slide":2,"text":"PDF text, questions, marks, sources, and pages become structured JSON.","textPreview":"PDF text, questions, marks, sources, and pages become structured JSON.","textChars":70,"textLines":1,"bbox":[438,328,158,112]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":2,"bbox":[628,196,158,86]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":2,"text":"Step 4: Compare","textPreview":"Step 4: Compare","textChars":15,"textLines":1,"bbox":[636,226,146,30]}
+{"kind":"shape","id":"sh/re1w7mp0","slide":2,"bbox":[791,224,32,30]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":2,"text":"Questions map to objectives/topics; rules and weightage are computed.","textPreview":"Questions map to objectives/topics; rules and weightage are computed.","textChars":69,"textLines":1,"bbox":[628,328,158,112]}
+{"kind":"shape","id":"sh/qpg3ex0n","slide":2,"bbox":[818,196,158,86]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":2,"text":"Step 5: Evaluate","textPreview":"Step 5: Evaluate","textChars":16,"textLines":1,"bbox":[826,226,146,30]}
+{"kind":"shape","id":"sh/8v6psfil","slide":2,"bbox":[981,224,32,30]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":2,"text":"Reference-answer evaluator checks accuracy, completeness, and hallucination.","textPreview":"Reference-answer evaluator checks accuracy, completeness, and hallucination.","textChars":76,"textLines":1,"bbox":[818,328,158,112]}
+{"kind":"shape","id":"sh/qd4vmtwr","slide":2,"bbox":[1008,196,158,86]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":2,"text":"Step 6: Export","textPreview":"Step 6: Export","textChars":14,"textLines":1,"bbox":[1016,226,146,30]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":2,"text":"JSON, Word, ZIP, audit logs, and intermediate artefacts are persisted.","textPreview":"JSON, Word, ZIP, audit logs, and intermediate artefacts are persisted.","textChars":70,"textLines":1,"bbox":[1008,328,158,112]}
+{"kind":"shape","id":"sh/x4nap4r6","slide":2,"bbox":[58,514,1164,82]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":2,"text":"Design principle","textPreview":"Design principle","textChars":16,"textLines":1,"bbox":[82,532,190,26]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":2,"text":"The system avoids free-form AI verdicts. It emits structured, traceable claims that a teacher or reviewer can challenge.","textPreview":"The system avoids free-form AI verdicts. It emits structured, traceable claims that a teacher or reviewer can challenge.","textChars":120,"textLines":1,"bbox":[278,528,860,36]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":2,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/cbulwval","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"notes","id":"nt/xbpbib","slide":2,"text":""}
+{"kind":"slide","id":"sl/6ndeu2","slide":3,"title":"REACT + VITE","textShapes":9}
+{"kind":"textbox","id":"sh/65wjudg7","slide":3,"text":"REACT + VITE","textPreview":"REACT + VITE","textChars":12,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":3,"text":"Frontend: Teacher-Facing Control Surface","textPreview":"Frontend: Teacher-Facing Control Surface","textChars":40,"textLines":1,"bbox":[58,70,900,58]}
+{"kind":"shape","id":"sh/obm58z25","slide":3,"bbox":[58,138,1164,1]}
+{"kind":"shape","id":"sh/6xkf6dcb","slide":3,"bbox":[640,178,540,340]}
+{"kind":"shape","id":"sh/hk3q5o7q","slide":3,"bbox":[672,212,10,10]}
+{"kind":"textbox","id":"sh/oza1gvy9","slide":3,"text":"Papers tab: PDF-only dropzone, batch upload, progress states, report tabs, JSON/Word/ZIP downloads.","textPreview":"Papers tab: PDF-only dropzone, batch upload, progress states, report tabs, JSON/Word/ZIP downloads.","textChars":99,"textLines":1,"bbox":[696,206,448,66]}
+{"kind":"shape","id":"sh/z61032ls","slide":3,"bbox":[672,284,10,10]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":3,"text":"Syllabuses tab: SEAB URL or direct PDF ingestion with streamed event timeline and original PDF preview.","textPreview":"Syllabuses tab: SEAB URL or direct PDF ingestion with streamed event timeline and original PDF preview.","textChars":103,"textLines":1,"bbox":[696,278,448,66]}
+{"kind":"shape","id":"sh/k3q5o7qp","slide":3,"bbox":[672,356,10,10]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":3,"text":"Settings panel: model provider, base URL, model discovery, timeout, and connection test.","textPreview":"Settings panel: model provider, base URL, model discovery, timeout, and connection test.","textChars":88,"textLines":1,"bbox":[696,350,448,66]}
+{"kind":"shape","id":"sh/2x4nap4r","slide":3,"bbox":[672,428,10,10]}
+{"kind":"textbox","id":"sh/vixczed8","slide":3,"text":"Report view: structure, failed checks, topic weightage, objective alignment, and evidence pages.","textPreview":"Report view: structure, failed checks, topic weightage, objective alignment, and evidence pages.","textChars":96,"textLines":1,"bbox":[696,422,448,66]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":3,"text":"Key files: App.tsx, client.ts, UploadDropzone.tsx, ComparisonReport.tsx, ModelSettingsPanel.tsx","textPreview":"Key files: App.tsx, client.ts, UploadDropzone.tsx, ComparisonReport.tsx, ModelSettingsPanel.tsx","textChars":95,"textLines":1,"bbox":[58,554,960,24]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":3,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/6psfil0r","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"image","id":"im/epkzupwb","slide":3,"name":"","alt":"Frontend flow diagram","bbox":[58,178,525,330]}
+{"kind":"notes","id":"nt/6ndeu2","slide":3,"text":""}
+{"kind":"slide","id":"sl/yyp889","slide":4,"title":"FASTAPI + TYPED SCHEMAS","textShapes":10}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":4,"text":"FASTAPI + TYPED SCHEMAS","textPreview":"FASTAPI + TYPED SCHEMAS","textChars":23,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":4,"text":"Backend: Traceable Analysis Pipeline","textPreview":"Backend: Traceable Analysis Pipeline","textChars":36,"textLines":1,"bbox":[58,70,900,58]}
+{"kind":"shape","id":"sh/7ed8bat4","slide":4,"bbox":[58,138,1164,1]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":4,"bbox":[700,172,460,104]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":4,"text":"Route resolution","textPreview":"Route resolution","textChars":16,"textLines":1,"bbox":[728,190,260,26]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":4,"text":"First-page classification resolves configured syllabus route or stops with an explicit route issue.","textPreview":"First-page classification resolves configured syllabus route or stops with an explicit route issue.","textChars":99,"textLines":1,"bbox":[728,224,376,44]}
+{"kind":"shape","id":"sh/wjudg7ad","slide":4,"bbox":[700,302,460,104]}
+{"kind":"textbox","id":"sh/p4r65wju","slide":4,"text":"Extraction and rules","textPreview":"Extraction and rules","textChars":20,"textLines":1,"bbox":[728,314,260,26]}
+{"kind":"textbox","id":"sh/lwval87e","slide":4,"text":"PDF Markdown plus syllabus JSON produce questions, sources, structure metrics, and rule checks.","textPreview":"PDF Markdown plus syllabus JSON produce questions, sources, structure metrics, and rule checks.","textChars":95,"textLines":1,"bbox":[728,348,376,48]}
+{"kind":"shape","id":"sh/wb2hwfyx","slide":4,"bbox":[700,432,460,116]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":4,"text":"Alignment and reports","textPreview":"Alignment and reports","textChars":21,"textLines":1,"bbox":[728,438,260,26]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":4,"text":"Question annotations feed required/offered topic weightage and final ComparisonReport exports.","textPreview":"Question annotations feed required/offered topic weightage and final ComparisonReport exports.","textChars":94,"textLines":1,"bbox":[728,472,376,54]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":4,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"image","id":"im/psfil0rq","slide":4,"name":"","alt":"Backend pipeline diagram","bbox":[58,170,600,390]}
+{"kind":"notes","id":"nt/yyp889","slide":4,"text":""}
+{"kind":"slide","id":"sl/yjotak","slide":5,"title":"SCHEMAS AND ARTEFACTS","textShapes":31}
+{"kind":"textbox","id":"sh/m58z25kb","slide":5,"text":"SCHEMAS AND ARTEFACTS","textPreview":"SCHEMAS AND ARTEFACTS","textChars":21,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":5,"text":"Data Contracts Make AI Claims Reviewable","textPreview":"Data Contracts Make AI Claims Reviewable","textChars":40,"textLines":1,"bbox":[58,70,900,58]}
+{"kind":"shape","id":"sh/4byhgn29","slide":5,"bbox":[58,138,1164,1]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":5,"bbox":[58,176,580,44]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":5,"text":"Object","textPreview":"Object","textChars":6,"textLines":1,"bbox":[72,188,150,20]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":5,"text":"Purpose","textPreview":"Purpose","textChars":7,"textLines":1,"bbox":[242,188,180,20]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":5,"text":"Review value","textPreview":"Review value","textChars":12,"textLines":1,"bbox":[450,188,160,20]}
+{"kind":"shape","id":"sh/bat47y1k","slide":5,"bbox":[58,224,580,52]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":5,"text":"ExamPaper","textPreview":"ExamPaper","textChars":9,"textLines":1,"bbox":[72,236,150,26]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":5,"text":"Questions, sources, marks, pages","textPreview":"Questions, sources, marks, pages","textChars":32,"textLines":1,"bbox":[242,234,180,30]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":5,"text":"Grounds paper structure","textPreview":"Grounds paper structure","textChars":23,"textLines":1,"bbox":[450,234,160,30]}
+{"kind":"shape","id":"sh/m58z25kb","slide":5,"bbox":[58,282,580,52]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":5,"text":"SyllabusDocument","textPreview":"SyllabusDocument","textChars":16,"textLines":1,"bbox":[72,294,150,26]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":5,"text":"Objectives, components, topics","textPreview":"Objectives, components, topics","textChars":30,"textLines":1,"bbox":[242,292,180,30]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":5,"text":"Defines baseline","textPreview":"Defines baseline","textChars":16,"textLines":1,"bbox":[450,292,160,30]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":5,"bbox":[58,340,580,52]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":5,"text":"Question Annotation","textPreview":"Question Annotation","textChars":19,"textLines":1,"bbox":[72,352,150,26]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":5,"text":"Objective/topic mapping plus evidence","textPreview":"Objective/topic mapping plus evidence","textChars":37,"textLines":1,"bbox":[242,350,180,30]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":5,"text":"Audits AI reasoning","textPreview":"Audits AI reasoning","textChars":19,"textLines":1,"bbox":[450,350,160,30]}
+{"kind":"shape","id":"sh/xc3ylc7u","slide":5,"bbox":[58,398,580,52]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":5,"text":"TopicWeightage","textPreview":"TopicWeightage","textChars":14,"textLines":1,"bbox":[72,410,150,26]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":5,"text":"Required vs offered marks","textPreview":"Required vs offered marks","textChars":25,"textLines":1,"bbox":[242,408,180,30]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":5,"text":"Shows topic balance","textPreview":"Shows topic balance","textChars":19,"textLines":1,"bbox":[450,408,160,30]}
+{"kind":"shape","id":"sh/xkf6dcbu","slide":5,"bbox":[58,456,580,52]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":5,"text":"ComparisonReport","textPreview":"ComparisonReport","textChars":16,"textLines":1,"bbox":[72,468,150,26]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":5,"text":"Checks, issues, metrics, downloads","textPreview":"Checks, issues, metrics, downloads","textChars":34,"textLines":1,"bbox":[242,466,180,30]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":5,"text":"Management-ready output","textPreview":"Management-ready output","textChars":23,"textLines":1,"bbox":[450,466,160,30]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":5,"text":"Clean Report Assembly Flow","textPreview":"Clean Report Assembly Flow","textChars":26,"textLines":1,"bbox":[710,188,360,22]}
+{"kind":"shape","id":"sh/83itgfml","slide":5,"bbox":[690,230,136,56]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":5,"text":"Syllabus","textPreview":"Syllabus","textChars":8,"textLines":1,"bbox":[702,244,112,34]}
+{"kind":"shape","id":"sh/7qpg3ex0","slide":5,"bbox":[690,314,136,56]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":5,"text":"Exam paper","textPreview":"Exam paper","textChars":10,"textLines":1,"bbox":[702,328,112,34]}
+{"kind":"shape","id":"sh/pwb2hwfy","slide":5,"bbox":[690,398,136,56]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":5,"text":"Rule checks","textPreview":"Rule checks","textChars":11,"textLines":1,"bbox":[702,412,112,34]}
+{"kind":"shape","id":"sh/7y1kre1w","slide":5,"bbox":[858,282,160,120]}
+{"kind":"textbox","id":"sh/wjudg7ad","slide":5,"text":"Comparison report","textPreview":"Comparison report","textChars":17,"textLines":1,"bbox":[870,296,136,98]}
+{"kind":"shape","id":"sh/p4r65wju","slide":5,"bbox":[1050,270,136,56]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":5,"text":"Question mapping","textPreview":"Question mapping","textChars":16,"textLines":1,"bbox":[1062,284,112,34]}
+{"kind":"shape","id":"sh/72x4nap4","slide":5,"bbox":[1050,386,136,56]}
+{"kind":"textbox","id":"sh/val87ed8","slide":5,"text":"Topic weightage","textPreview":"Topic weightage","textChars":15,"textLines":1,"bbox":[1062,400,112,34]}
+{"kind":"shape","id":"sh/6psfil0r","slide":5,"bbox":[830,246,24,24]}
+{"kind":"shape","id":"sh/dcbulwva","slide":5,"bbox":[830,330,24,24]}
+{"kind":"shape","id":"sh/kre1w7mp","slide":5,"bbox":[830,414,24,24]}
+{"kind":"shape","id":"sh/vixczed8","slide":5,"bbox":[1022,286,24,24]}
+{"kind":"shape","id":"sh/2x4nap4r","slide":5,"bbox":[1022,402,24,24]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":5,"text":"Inputs and checks feed one final report payload.","textPreview":"Inputs and checks feed one final report payload.","textChars":48,"textLines":1,"bbox":[708,482,450,24]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":5,"text":"Persisted outputs include original upload, first-page image, Markdown, raw model response, raw extraction, exam structure, report JSON, and audit log.","textPreview":"Persisted outputs include original upload, first-page image, Markdown, raw model response, raw extraction, exam structure, report JSON, a...","textChars":150,"textLines":1,"bbox":[58,552,1060,34]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":5,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"notes","id":"nt/yjotak","slide":5,"text":""}
+{"kind":"slide","id":"sl/6egrnb","slide":6,"title":"SPECIMEN PAPER 1","textShapes":12}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":6,"text":"SPECIMEN PAPER 1","textPreview":"SPECIMEN PAPER 1","textChars":16,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":6,"text":"History Paper 1 Result: Structure Extracted Cleanly","textPreview":"History Paper 1 Result: Structure Extracted Cleanly","textChars":51,"textLines":1,"bbox":[58,70,1080,82]}
+{"kind":"shape","id":"sh/8nqxs72x","slide":6,"bbox":[58,160,1164,1]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":6,"bbox":[58,186,250,142]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":6,"text":"50","textPreview":"50","textChars":2,"textLines":1,"bbox":[86,202,110,58]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":6,"text":"candidate marks","textPreview":"candidate marks","textChars":15,"textLines":1,"bbox":[86,270,170,28]}
+{"kind":"shape","id":"sh/8bat47y1","slide":6,"bbox":[344,186,250,142]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":6,"text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[372,202,110,58]}
+{"kind":"textbox","id":"sh/uxc3ylc7","slide":6,"text":"questions extracted","textPreview":"questions extracted","textChars":19,"textLines":1,"bbox":[372,270,170,28]}
+{"kind":"shape","id":"sh/gn29gr2p","slide":6,"bbox":[630,186,250,142]}
+{"kind":"textbox","id":"sh/58z25kb6","slide":6,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[658,202,110,58]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":6,"text":"sources traced","textPreview":"sources traced","textChars":14,"textLines":1,"bbox":[658,270,170,28]}
+{"kind":"shape","id":"sh/n29gr2p8","slide":6,"bbox":[916,186,250,142]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":6,"text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[944,202,110,58]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":6,"text":"pipeline issues","textPreview":"pipeline issues","textChars":15,"textLines":1,"bbox":[944,270,170,28]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":6,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/cbulwval","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"chart","id":"ch/m58z25kb","slide":6,"name":"","chartType":"bar","bbox":[120,384,1000,210]}
+{"kind":"notes","id":"nt/6egrnb","slide":6,"text":""}
+{"kind":"slide","id":"sl/gwppge","slide":7,"title":"BALANCE ANALYSIS","textShapes":9}
+{"kind":"textbox","id":"sh/47y1kre1","slide":7,"text":"BALANCE ANALYSIS","textPreview":"BALANCE ANALYSIS","textChars":16,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":7,"text":"Topic Weightage: Required vs Offered Marks","textPreview":"Topic Weightage: Required vs Offered Marks","textChars":42,"textLines":1,"bbox":[58,70,900,58]}
+{"kind":"shape","id":"sh/m1cfa9w3","slide":7,"bbox":[58,138,1164,1]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":7,"bbox":[900,190,260,96]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":7,"text":"Interpretation","textPreview":"Interpretation","textChars":14,"textLines":1,"bbox":[924,210,190,24]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":7,"text":"Section A concentrates compulsory marks on WWII Europe.","textPreview":"Section A concentrates compulsory marks on WWII Europe.","textChars":55,"textLines":1,"bbox":[924,246,190,30]}
+{"kind":"shape","id":"sh/t83itgfm","slide":7,"bbox":[900,318,260,146]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":7,"text":"Reviewer action","textPreview":"Reviewer action","textChars":15,"textLines":1,"bbox":[924,338,190,24]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":7,"text":"Confirm whether this is intended for the paper or should be diversified in future papers.","textPreview":"Confirm whether this is intended for the paper or should be diversified in future papers.","textChars":89,"textLines":1,"bbox":[924,374,190,66]}
+{"kind":"textbox","id":"sh/judg7ads","slide":7,"text":"Note: reviewed reference mappings illustrate the expected AI output; fresh mock runs correctly expose mapping uncertainty.","textPreview":"Note: reviewed reference mappings illustrate the expected AI output; fresh mock runs correctly expose mapping uncertainty.","textChars":122,"textLines":1,"bbox":[84,570,960,24]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":7,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/1032lszq","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"chart","id":"ch/5kb6xkf6","slide":7,"name":"","chartType":"bar","bbox":[84,180,760,350]}
+{"kind":"notes","id":"nt/gwppge","slide":7,"text":""}
+{"kind":"slide","id":"sl/tewl9r","slide":8,"title":"QUALITY CONTROL","textShapes":8}
+{"kind":"textbox","id":"sh/vy90je9c","slide":8,"text":"QUALITY CONTROL","textPreview":"QUALITY CONTROL","textChars":15,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":8,"text":"Evaluation: What The Scorer Catches","textPreview":"Evaluation: What The Scorer Catches","textChars":35,"textLines":1,"bbox":[58,70,900,58]}
+{"kind":"shape","id":"sh/d4vmtwra","slide":8,"bbox":[58,138,1164,1]}
+{"kind":"shape","id":"sh/vmtwra5g","slide":8,"bbox":[82,430,10,10]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":8,"text":"Accuracy: exact and textual similarity against expected structured keys.","textPreview":"Accuracy: exact and textual similarity against expected structured keys.","textChars":72,"textLines":1,"bbox":[106,424,1016,48]}
+{"kind":"shape","id":"sh/dsji5sne","slide":8,"bbox":[82,484,10,10]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":8,"text":"Completeness: required fields are present, including objectives and topic-weightage rows.","textPreview":"Completeness: required fields are present, including objectives and topic-weightage rows.","textChars":89,"textLines":1,"bbox":[106,478,1016,48]}
+{"kind":"shape","id":"sh/vahoza1g","slide":8,"bbox":[82,538,10,10]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":8,"text":"Hallucination: predicted values must be supported by paper text or the reviewed reference answer.","textPreview":"Hallucination: predicted values must be supported by paper text or the reviewed reference answer.","textChars":97,"textLines":1,"bbox":[106,532,1016,48]}
+{"kind":"shape","id":"sh/i5sneloj","slide":8,"bbox":[82,592,10,10]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":8,"text":"Operational lesson: model output should be evaluated separately from pipeline health.","textPreview":"Operational lesson: model output should be evaluated separately from pipeline health.","textChars":85,"textLines":1,"bbox":[106,586,1016,48]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":8,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"table","id":"tb/rytsvu9k","slide":8,"name":"","rows":3,"cols":5,"preview":"Run | Exact | Complete | Hallucination | Meaning","bbox":[58,190,1164,190]}
+{"kind":"notes","id":"nt/tewl9r","slide":8,"text":""}
+{"kind":"slide","id":"sl/gibe5j","slide":9,"title":"REUSABLE PIPELINE, SUBJECT-SPECIFIC RULES","textShapes":26}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":9,"text":"REUSABLE PIPELINE, SUBJECT-SPECIFIC RULES","textPreview":"REUSABLE PIPELINE, SUBJECT-SPECIFIC RULES","textChars":41,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":9,"text":"Generalising Beyond History","textPreview":"Generalising Beyond History","textChars":27,"textLines":1,"bbox":[58,70,900,58]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":9,"bbox":[58,138,1164,1]}
+{"kind":"shape","id":"sh/tsvu9kni","slide":9,"bbox":[58,180,340,360]}
+{"kind":"textbox","id":"sh/47y1kre1","slide":9,"text":"Reusable","textPreview":"Reusable","textChars":8,"textLines":1,"bbox":[82,204,260,34]}
+{"kind":"shape","id":"sh/bm58z25k","slide":9,"bbox":[86,276,10,10]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":9,"text":"PDF validation","textPreview":"PDF validation","textChars":14,"textLines":1,"bbox":[110,270,246,34]}
+{"kind":"shape","id":"sh/twra5gbq","slide":9,"bbox":[86,316,10,10]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":9,"text":"First-page routing","textPreview":"First-page routing","textChars":18,"textLines":1,"bbox":[110,310,246,34]}
+{"kind":"shape","id":"sh/m58z25kb","slide":9,"bbox":[86,356,10,10]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":9,"text":"Markdown extraction","textPreview":"Markdown extraction","textChars":19,"textLines":1,"bbox":[110,350,246,34]}
+{"kind":"shape","id":"sh/4byhgn29","slide":9,"bbox":[86,396,10,10]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":9,"text":"Syllabus ingestion","textPreview":"Syllabus ingestion","textChars":18,"textLines":1,"bbox":[110,390,246,34]}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":9,"bbox":[86,436,10,10]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":9,"text":"LLM JSON prompts","textPreview":"LLM JSON prompts","textChars":16,"textLines":1,"bbox":[110,430,246,34]}
+{"kind":"shape","id":"sh/4nap4r65","slide":9,"bbox":[86,476,10,10]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":9,"text":"Report exports","textPreview":"Report exports","textChars":14,"textLines":1,"bbox":[110,470,246,34]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":9,"bbox":[446,180,340,360]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":9,"text":"Subject-specific","textPreview":"Subject-specific","textChars":16,"textLines":1,"bbox":[470,204,260,34]}
+{"kind":"shape","id":"sh/3ex0nuxc","slide":9,"bbox":[474,276,10,10]}
+{"kind":"textbox","id":"sh/at47y1kr","slide":9,"text":"Assessment objectives","textPreview":"Assessment objectives","textChars":21,"textLines":1,"bbox":[498,270,246,34]}
+{"kind":"shape","id":"sh/lkjm1cfa","slide":9,"bbox":[474,316,10,10]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":9,"text":"Component rules","textPreview":"Component rules","textChars":15,"textLines":1,"bbox":[498,310,246,34]}
+{"kind":"shape","id":"sh/32lszqtc","slide":9,"bbox":[474,356,10,10]}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":9,"text":"Choice policies","textPreview":"Choice policies","textChars":15,"textLines":1,"bbox":[498,350,246,34]}
+{"kind":"shape","id":"sh/l87ed8ba","slide":9,"bbox":[474,396,10,10]}
+{"kind":"textbox","id":"sh/sneloj2t","slide":9,"text":"Topic taxonomy","textPreview":"Topic taxonomy","textChars":14,"textLines":1,"bbox":[498,390,246,34]}
+{"kind":"shape","id":"sh/3q5o7qpg","slide":9,"bbox":[474,436,10,10]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":9,"text":"Evidence expectations","textPreview":"Evidence expectations","textChars":21,"textLines":1,"bbox":[498,430,246,34]}
+{"kind":"shape","id":"sh/o7qpg3ex","slide":9,"bbox":[474,476,10,10]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":9,"text":"Reference answer sets","textPreview":"Reference answer sets","textChars":21,"textLines":1,"bbox":[498,470,246,34]}
+{"kind":"shape","id":"sh/61032lsz","slide":9,"bbox":[834,180,340,360]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":9,"text":"Production controls","textPreview":"Production controls","textChars":19,"textLines":1,"bbox":[858,204,260,34]}
+{"kind":"shape","id":"sh/oj2t83it","slide":9,"bbox":[862,276,10,10]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":9,"text":"Self-hosted model","textPreview":"Self-hosted model","textChars":17,"textLines":1,"bbox":[886,270,246,34]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":9,"bbox":[862,316,10,10]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":9,"text":"Prompt versioning","textPreview":"Prompt versioning","textChars":17,"textLines":1,"bbox":[886,310,246,34]}
+{"kind":"shape","id":"sh/onyd0z61","slide":9,"bbox":[862,356,10,10]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":9,"text":"Teacher review queue","textPreview":"Teacher review queue","textChars":20,"textLines":1,"bbox":[886,350,246,34]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":9,"bbox":[862,396,10,10]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":9,"text":"Audit logs","textPreview":"Audit logs","textChars":10,"textLines":1,"bbox":[886,390,246,34]}
+{"kind":"shape","id":"sh/ra5gbq1o","slide":9,"bbox":[862,436,10,10]}
+{"kind":"textbox","id":"sh/2p8nqxs7","slide":9,"text":"Data retention","textPreview":"Data retention","textChars":14,"textLines":1,"bbox":[886,430,246,34]}
+{"kind":"shape","id":"sh/94fu18jq","slide":9,"bbox":[862,476,10,10]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":9,"text":"Fallback behaviour","textPreview":"Fallback behaviour","textChars":18,"textLines":1,"bbox":[886,470,246,34]}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":9,"text":"Conclusion: the architecture generalises, but each subject needs a reviewed rule pack and answer set before high-stakes use.","textPreview":"Conclusion: the architecture generalises, but each subject needs a reviewed rule pack and answer set before high-stakes use.","textChars":124,"textLines":1,"bbox":[58,580,1030,26]}
+{"kind":"textbox","id":"sh/2hwfyxob","slide":9,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"notes","id":"nt/gibe5j","slide":9,"text":""}
+{"kind":"slide","id":"sl/1v2oie","slide":10,"title":"DEPLOYMENT CONSIDERATIONS","textShapes":11}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":10,"text":"DEPLOYMENT CONSIDERATIONS","textPreview":"DEPLOYMENT CONSIDERATIONS","textChars":25,"textLines":1,"bbox":[58,36,540,26]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":10,"text":"Practical Usage And Next Steps","textPreview":"Practical Usage And Next Steps","textChars":30,"textLines":1,"bbox":[58,70,900,58]}
+{"kind":"shape","id":"sh/yd0z6103","slide":10,"bbox":[58,138,1164,1]}
+{"kind":"shape","id":"sh/g7adsji5","slide":10,"bbox":[58,190,10,10]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":10,"text":"Use as a teacher-review assistant, not an autonomous approval engine.","textPreview":"Use as a teacher-review assistant, not an autonomous approval engine.","textChars":69,"textLines":1,"bbox":[82,184,596,60]}
+{"kind":"shape","id":"sh/y1kre1w7","slide":10,"bbox":[58,256,10,10]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":10,"text":"Run self-hosted models through LM Studio, Ollama, or OpenAI-compatible endpoints for local governance.","textPreview":"Run self-hosted models through LM Studio, Ollama, or OpenAI-compatible endpoints for local governance.","textChars":102,"textLines":1,"bbox":[82,250,596,60]}
+{"kind":"shape","id":"sh/g3ex0nux","slide":10,"bbox":[58,322,10,10]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":10,"text":"Require evidence pages and ambiguity notes for all alignment claims.","textPreview":"Require evidence pages and ambiguity notes for all alignment claims.","textChars":68,"textLines":1,"bbox":[82,316,596,60]}
+{"kind":"shape","id":"sh/fu18jqh0","slide":10,"bbox":[58,388,10,10]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":10,"text":"Add subject packs incrementally: syllabus JSON, extraction profile, rule checks, prompt tests, reference answer set.","textPreview":"Add subject packs incrementally: syllabus JSON, extraction profile, rule checks, prompt tests, reference answer set.","textChars":116,"textLines":1,"bbox":[82,382,596,60]}
+{"kind":"shape","id":"sh/x0nuxc3y","slide":10,"bbox":[58,454,10,10]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":10,"text":"Improve next: real-model benchmark set, UI screenshots, reviewer feedback loop, and confidence calibration.","textPreview":"Improve next: real-model benchmark set, UI screenshots, reviewer feedback loop, and confidence calibration.","textChars":107,"textLines":1,"bbox":[82,448,596,60]}
+{"kind":"shape","id":"sh/fil0rqd4","slide":10,"bbox":[760,462,390,120]}
+{"kind":"textbox","id":"sh/83itgfml","slide":10,"text":"Recommended governance","textPreview":"Recommended governance","textChars":22,"textLines":1,"bbox":[786,482,300,24]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":10,"text":"Keep human sign-off, preserve audit logs, and review uncertain mappings before acting.","textPreview":"Keep human sign-off, preserve audit logs, and review uncertain mappings before acting.","textChars":86,"textLines":1,"bbox":[786,516,310,54]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":10,"text":"History Exam Paper AI Alignment Prototype","textPreview":"History Exam Paper AI Alignment Prototype","textChars":41,"textLines":1,"bbox":[58,674,520,20]}
+{"kind":"textbox","id":"sh/fepkzupw","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1168,672,54,24]}
+{"kind":"image","id":"im/knih4byh","slide":10,"name":"","alt":"Cartoon teachers reviewing AI analysis","bbox":[760,164,390,260]}
+{"kind":"notes","id":"nt/1v2oie","slide":10,"text":""}
