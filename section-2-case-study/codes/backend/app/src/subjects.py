@@ -84,7 +84,10 @@ class GenericSubjectRoute:
         return run_generic_paper_rules(exam, syllabus)
 
     def annotate(self, exam: ExamPaper, syllabus: SyllabusDocument, client: LLMClient) -> list[QuestionAnnotation]:
-        return [annotate_question(question, syllabus, exam.paper_code, client, exam.sources) for question in exam.questions]
+        return [
+            annotate_question(question, syllabus, exam.paper_code, client, exam.sources, exam.questions)
+            for question in exam.questions
+        ]
 
     def structure_metrics(self, exam: ExamPaper, syllabus: SyllabusDocument) -> list[StructureMetric]:
         section_labels = sorted({q.section for q in exam.questions})

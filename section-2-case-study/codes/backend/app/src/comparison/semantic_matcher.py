@@ -15,9 +15,16 @@ def annotate_question(
     paper_code: str | None = None,
     model_client: LLMClient | None = None,
     sources: list[SourceItem] | None = None,
+    all_questions: list[ExamQuestion] | None = None,
 ) -> QuestionAnnotation:
     if model_client is not None and model_client.provider != "mock":
-        llm_annotation = _annotate_question_with_llm(question, syllabus, model_client, sources or [])
+        llm_annotation = _annotate_question_with_llm(
+            question,
+            syllabus,
+            model_client,
+            sources or [],
+            all_questions or [],
+        )
         if llm_annotation is not None:
             return llm_annotation
     fallback_annotation = _annotate_question_with_rules(question, syllabus, paper_code, sources or [])
@@ -31,11 +38,13 @@ def _annotate_question_with_llm(
     syllabus: SyllabusDocument,
     model_client: LLMClient,
     sources: list[SourceItem],
+    all_questions: list[ExamQuestion],
 ) -> QuestionAnnotation | None:
     prompt = render_prompt(
         "map_question_to_syllabus.j2",
         QuestionAnnotation,
         question_json=question.model_dump(mode="json"),
+        question_context_json=_parent_question_context(question, all_questions, sources),
         syllabus_candidates_json=[topic.model_dump(mode="json") for topic in syllabus.topics],
     )
     try:
@@ -72,6 +81,51 @@ def _annotate_question_with_rules(
         evidence_page_numbers=_trace_pages(question, sources),
         ambiguity_notes=["Rule-based fallback used because model-backed syllabus mapping was unavailable or invalid."],
     )
+
+
+def _parent_question_context(question: ExamQuestion, all_questions: list[ExamQuestion], sources: list[SourceItem]) -> dict:
+    parent_id = _parent_question_id(question.question_id)
+    required_source_ids = set(question.required_sources)
+    sibling_questions = [
+        item
+        for item in all_questions
+        if _parent_question_id(item.question_id) == parent_id and item.question_id != question.question_id
+    ]
+    if question.section == "A":
+        context_sources = sources
+    else:
+        context_sources = [source for source in sources if source.source_id in required_source_ids]
+    return {
+        "parent_question_id": parent_id,
+        "parent_question_note": "Sub-questions with the same parent id form one larger question/case study.",
+        "sibling_subquestions": [
+            {
+                "question_id": item.question_id,
+                "section": item.section,
+                "prompt": item.prompt,
+                "marks": item.marks,
+                "required_sources": item.required_sources,
+                "page_number": item.page_number,
+            }
+            for item in sibling_questions
+        ],
+        "shared_sources": [
+            {
+                "source_id": source.source_id,
+                "source_type": source.source_type,
+                "attribution": source.attribution,
+                "date": source.date,
+                "text_excerpt": (source.text or "")[:600],
+                "page_number": source.page_number,
+            }
+            for source in context_sources
+        ],
+    }
+
+
+def _parent_question_id(question_id: str) -> str:
+    match = re.match(r"^(\d+)\([a-z]\)$", question_id.strip(), re.I)
+    return match.group(1) if match else question_id.strip()
 
 
 def _objectives_for_question(question: ExamQuestion, syllabus: SyllabusDocument, paper_code: str | None) -> list[str]:

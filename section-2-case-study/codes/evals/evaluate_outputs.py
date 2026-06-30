@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from evals.metrics import evaluate_key
+from evals.metrics import evaluate_key  # noqa: E402
 
 
 DATA_DIR = ROOT / "data"

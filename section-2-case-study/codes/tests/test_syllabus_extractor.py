@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import pytest
 
 from backend.app.core import config as config_module

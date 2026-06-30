@@ -8,7 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from backend.app.src.ingestion.pdf_to_markdown import convert_pdf_to_markdown
+from backend.app.src.ingestion.pdf_to_markdown import convert_pdf_to_markdown  # noqa: E402
 
 
 def main() -> None:

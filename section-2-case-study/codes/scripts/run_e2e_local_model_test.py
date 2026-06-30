@@ -8,10 +8,10 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-import httpx
+import httpx  # noqa: E402
 
-from backend.app.core.storage import new_job_id
-from backend.app.src.graph.workflow import run_analysis
+from backend.app.core.storage import new_job_id  # noqa: E402
+from backend.app.src.graph.workflow import run_analysis  # noqa: E402
 
 
 def preflight_model(provider: str, base_url: str | None, model: str | None) -> None:

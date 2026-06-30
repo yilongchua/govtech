@@ -8,9 +8,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from backend.app.src.ingestion.first_page_classifier import classify_first_page
-from backend.app.src.ingestion.model_client import LocalModelClient
-from backend.app.src.ingestion.page_renderer import render_first_page
+from backend.app.src.ingestion.first_page_classifier import classify_first_page  # noqa: E402
+from backend.app.src.ingestion.model_client import LocalModelClient  # noqa: E402
+from backend.app.src.ingestion.page_renderer import render_first_page  # noqa: E402
 
 
 def main() -> None:
